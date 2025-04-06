@@ -324,8 +324,3 @@ arquitetura em camadas.
         - Exemplo: `JwtTokenProvider`, `UserDetailsServiceImpl`
         - Classes que lidam com segurança.
 
-## Conclusão
-
-Essa arquitetura em camadas promove uma separação clara de responsabilidades, facilitando a manutenção, escalabilidade e
-testabilidade da aplicação. Cada camada tem um propósito específico e interage com as outras camadas de maneira
-organizada, permitindo um desenvolvimento e manutenção mais eficientes.
