@@ -1,17 +1,19 @@
 spring:
-  profiles:
-    active: test
-
   datasource:
-    url: jdbc:tc:postgresql:14-alpine:///shop-test-db
-  sql:
-    init:
-      mode: always
-
+    url: jdbc:postgresql://localhost:5436/${POSTGRES_TEST_DB}
+    username: ${POSTGRES_TEST_USERNAME}
+    password: ${POSTGRES_TEST_PASSWORD}
   jpa:
-    open-in-view: true
+    hibernate:
+      ddl-auto: create-drop  # This will recreate the database schema for each test
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8087  # Different port for test environment
 

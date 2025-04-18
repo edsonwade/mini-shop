@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres_dev:5432/devdb
+    # Use environment variable with fallback
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/devdb}
     username: admin
     password: admin
   jpa:
