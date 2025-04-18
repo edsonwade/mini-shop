@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/devdb
+    url: jdbc:postgresql://postgres_dev:5432/devdb
     username: admin
     password: admin
   jpa:
@@ -21,4 +21,4 @@ management:
     health:
       show-details: always
 server:
-  port: 8085
+  port: 8082

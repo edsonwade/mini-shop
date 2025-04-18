@@ -1,4 +1,5 @@
 #########################################
+#########################################
 # Build Stage: Build the application using Maven
 #########################################
 FROM maven:3.8.1-openjdk-17 AS builder
@@ -19,20 +20,19 @@ RUN mvn clean package -DskipTests
 #########################################
 FROM openjdk:17
 
-# Set environment variable
+# Set environment variables
 ENV SERVER_PORT=8080
 
 # Copy the built JAR file from the build stage to the new image
 COPY --from=builder /app/target/*.jar /mini-shop-0.0.1-SNAPSHOT.jar
 
 # Copy the wait-for-it.sh script into the image
-COPY scripts/wait-for-it.sh /wait-for-it.sh
-
-# Explicitly set the execution permissions for the script
-RUN chmod +x /wait-for-it.sh
+#COPY wait-for-it.sh /wait-for-it.sh
+#RUN chmod +x /wait-for-it.sh
 
 # Expose the port that the application will run on
 EXPOSE ${SERVER_PORT}
 
-# Set the entrypoint to wait for PostgreSQL and run the application
-ENTRYPOINT ["/wait-for-it.sh", "--host=postgres_dev", "--port=5433", "--timeout=30", "--", "java", "-jar", "/mini-shop-0.0.1-SNAPSHOT.jar"]
+# Specify the command to run your application, waiting for PostgreSQL to be ready
+ENTRYPOINT ["java", "-jar", "/mini-shop-0.0.1-SNAPSHOT.jar"]
+

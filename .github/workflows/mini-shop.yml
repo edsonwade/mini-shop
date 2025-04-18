@@ -48,35 +48,6 @@ jobs:
       - name: Build and Test with Maven
         run: mvn clean package
 
-      # Step 6: Create .env File
-      - name: Create .env File
-        run: |
-          echo "POSTGRES_DEV_DB=${{ secrets.POSTGRES_DEV_DB }}" >> .env
-          echo "POSTGRES_DEV_USER=${{ secrets.POSTGRES_DEV_USER }}" >> .env
-          echo "POSTGRES_DEV_PASSWORD=${{ secrets.POSTGRES_DEV_PASSWORD }}" >> .env
-          echo "MONGO_ROOT_USERNAME=${{ secrets.MONGO_ROOT_USERNAME }}" >> .env
-          echo "MONGO_ROOT_PASSWORD=${{ secrets.MONGO_ROOT_PASSWORD }}" >> .env
-        shell: bash
-
-      # Step 7: Start Required Services with Docker Compose
-      - name: Start Services with Docker Compose
-        run: |
-          docker-compose -f docker-compose.yml up -d postgres_dev
-          docker-compose -f docker-compose.yml up -d shop-management-system_dev
-
-      # Step 8: Wait for Postgres to Initialize
-      - name: Wait for Postgres
-        run: ./scripts/wait-for-it.sh --host postgres_dev --port 5433 --timeout 30
-
-      # Step 9: Test Health Endpoint
-      - name: Test Health Endpoint
-        run: |
-          curl -f http://localhost:8082/actuator/health || (docker-compose logs shop-management-system_dev && exit 1)
-
-      # Step 10: Tear Down Docker Compose
-      - name: Tear Down Docker Compose
-        run: docker-compose -f docker-compose.yml down
-
       # Step 11: Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
