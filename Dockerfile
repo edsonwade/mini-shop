@@ -33,6 +33,10 @@ COPY --from=builder /app/target/*.jar /mini-shop-0.0.1-SNAPSHOT.jar
 # Expose the port that the application will run on
 EXPOSE ${SERVER_PORT}
 
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost:${SERVER_PORT}/actuator/health || exit 1
+
 # Specify the command to run your application, waiting for PostgreSQL to be ready
 ENTRYPOINT ["java", "-jar", "/mini-shop-0.0.1-SNAPSHOT.jar"]
 
