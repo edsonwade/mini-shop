@@ -34,5 +34,5 @@ COPY --from=builder /app/target/*.jar /mini-shop-0.0.1-SNAPSHOT.jar
 EXPOSE ${SERVER_PORT}
 
 # Specify the command to run your application, waiting for PostgreSQL to be ready
-ENTRYPOINT ["java", "-jar", "/mini-shop-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["/wait-for-it.sh", "--host=postgres_dev", "--port=5433", "--timeout=30", "--", "java", "-jar", "/mini-shop-0.0.1-SNAPSHOT.jar"]
 
