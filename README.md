@@ -1,21 +1,24 @@
-# Mini-Shop
+# Mini Shop Management System
 
 ## Description
 
-Mini-Shop is a backend application for an e-commerce platform that manages entities such as Account, Order, Client,
-Payment, ItemOrder, Product, and Address. This project demonstrates the use of various technologies and frameworks to
-build a robust and scalable system.
+The **Mini Shop Management System** is a backend application for an e-commerce platform that manages entities such as
+Accounts, Orders, Clients, Payments, ItemOrders, Products, and Addresses. This project demonstrates the use of various
+technologies and frameworks to build a robust and scalable system. It is designed to work seamlessly across different
+environments, including development, production, and Dockerized setups.
 
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
+- [Feature](#features)
+- [System Components](#system-components)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
+- [Deployment](#deployment)
 - [Database Configuration](#database-configuration)
 - [Testing](#testing)
-- [Branch Naming Conventions](#branch-naming-conventions)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -40,6 +43,66 @@ build a robust and scalable system.
 - Loggers
 - Kafka
 - MapStruct
+
+## Features
+
+1. **Multi-Environment Support**:
+    - Easily configurable for development (`dev`), production (`prod`), and Dockerized (`docker`) environments.
+    - Environment-specific configurations for databases and ports.
+
+2. **Database Integration**:
+    - Supports PostgreSQL as the primary relational database.
+    - MongoDB for NoSQL data handling.
+    - Redis for caching and session management.
+
+3. **Health Monitoring**:
+    - Provides health checks for all services to ensure uptime and reliability.
+    - Uses Spring Boot Actuator for monitoring application health.
+
+4. **Scalability and Persistence**:
+    - Persistent volumes for PostgreSQL, MongoDB, Redis, Prometheus, and Grafana.
+    - Scalable architecture to support increased workloads.
+
+5. **Metrics and Monitoring**:
+    - Integrated with Prometheus and Grafana for application and system monitoring.
+    - Configurable dashboards for real-time insights.
+
+6. **Spring Boot Backend**:
+    - Offers robust APIs for managing shop-related operations.
+    - Uses Hibernate for ORM (Object-Relational Mapping) with PostgreSQL.
+
+7. **Dockerized Deployment**:
+    - Simplifies deployment with pre-built Docker images.
+    - Configurable via environment variables and Docker Compose.
+
+## System Components
+
+### 1. **Application Services**
+
+- **Mini-Shop Management System**: The main service that provides APIs for shop management.
+    - Ports: `8080` (Docker), `8082` (Dev), `8083` (Prod).
+    - Profiles: `dev`, `prod`, `docker`.
+- **Technologies**:
+    - Spring Boot
+    - Hibernate ORM
+    - REST APIs
+
+### 2. **Databases**
+
+- **PostgreSQL**:
+    - Used as the main relational database.
+    - Configured for primary and replica setups (production).
+- **MongoDB**:
+    - Used for NoSQL data storage.
+- **Redis**:
+    - Functions as a cache and session store.
+
+### 3. **Monitoring Tools**
+
+- **Prometheus**:
+    - Collects metrics for performance monitoring.
+- **Grafana**:
+    - Visualizes metrics with dashboards.
 
 ## Prerequisites
 
@@ -122,13 +185,36 @@ To run the application locally, use the following command:
 1. Create a PostgreSQL database for the application.
 2. Update the ```application.properties``` or ```application.yml``` file with your database connection details:
 
+Environment variables are defined in a `.env` file for easy configuration. Examples:
+
+- `POSTGRES_PROD_DB`: Database name for production.
+- `MONGO_ROOT_USERNAME`: MongoDB root username.
+- `SERVER_PORT`: Port on which the application runs.
+
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 ```
 
-3. For MongoDB, ensure the connection details are also configured in the same properties file.
+## Deployment
+
+The system is deployed using Docker Compose. Below is an example of how to start the system:
+
+```bash
+docker-compose up -d
+```
+
+### Docker Images
+
+- Main Service: `edsonwade126/mini-shop-management-system:latest`
+- PostgreSQL: `postgres:alpine`
+- MongoDB: `mongo:6.0`
+- Redis: `redis:6.2`
+- Prometheus: `prom/prometheus:v2.41.0`
+- Grafana: `grafana/grafana:9.5.2`
+
+- For MongoDB, ensure the connection details are also configured in the same properties file.
 
 ## Testing
 
@@ -143,14 +229,6 @@ For BDD tests with Cucumber, you can run:
 ```bash
 mvn test -Dcucumber.options="--tags @yourTag"
 ```
-
-## Branch Naming Conventions
-
-- **Feature Branches**: `feature/short-description`
-- **Bug Fixes**: `bugfix/short-description`
-- **Hotfixes**: `hotfix/short-description`
-- **Release Branches**: `release/version-number`
-- **Development Branches**: `develop`
 
 ## Contributing
 

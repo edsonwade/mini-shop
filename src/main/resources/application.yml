@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mini-shop
+  profiles:
+    active: dev
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, info, metrics, health
+  info:
+    env:
+      enabled: true

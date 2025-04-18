@@ -1,49 +1,238 @@
 version: '3.8'
 
 services:
-  shop-management-system:
-    image: mini-shop:latest
-    container_name: shop-management
+
+  shop-management-system_prod:
+    image: edsonwade126/mini-shop-management-system:latest
+    container_name: shop-management-prod
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres_prod
+      - redis
+      - mongodb
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres_prod:5432/${POSTGRES_PROD_DB}
+      SERVER_PORT: 8083
+      HIBERNATE_DDL_AUTO: 'none' # prod
+      SPRING_PROFILES_ACTIVE: 'prod'
+    env_file:
+      - .env
+    networks:
+      - shop-management-net
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8083/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 70s
+    restart: on-failure
+
+  shop-management-system_dev:
+    image: edsonwade126/mini-shop-management-system:latest
+    container_name: shop-management-dev
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres_dev
+      - redis
+      - mongodb
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres_dev:5432/${POSTGRES_DEV_DB}
+      POSTGRES_USER: ${POSTGRES_DEV_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_DEV_PASSWORD}
+      HIBERNATE_DDL_AUTO: 'update'
+      SPRING_PROFILES_ACTIVE: 'dev'
+      SERVER_PORT: 8082
+    env_file:
+      - .env
+    networks:
+      - shop-management-net
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 70s
+    restart: on-failure
+
+
+  shop-management-system_docker:
+    image: edsonwade126/mini-shop-management-system:latest
+    container_name: shop-management-docker
     ports:
       - "8080:8080"
     depends_on:
-      - postgres
+      - postgres_docker
+      - redis
+      - mongodb
     environment:
-      DATABASE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB}
-      POSTGRES_USERNAME: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      SERVER_PORT: '8080'
+      DATABASE_URL: jdbc:postgresql://postgres_docker:5432/${POSTGRES_DOCKER_DB}
+      SERVER_PORT: 8080
       HIBERNATE_DDL_AUTO: 'update'
       SPRING_PROFILES_ACTIVE: 'docker'
     env_file:
       - .env
+    networks:
+      - shop-management-net
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 70s
     restart: on-failure
 
-  postgres:
-    image: postgres:latest
-    container_name: postgres
+  postgres_prod:
+    image: postgres:alpine
+    container_name: postgres_prod
+    ports:
+      - "5434:5432"
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_PROD_DB}
+      POSTGRES_USER: ${POSTGRES_PROD_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PROD_PASSWORD}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_prod_data:/var/lib/postgresql/data
+    networks:
+      - shop-management-net
+    command: |
+      postgres -c 'wal_keep_size=64MB'
     env_file:
       - .env
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_PROD_USER} -d ${POSTGRES_PROD_DB}" ]
       interval: 10s
       timeout: 5s
       retries: 5
     restart: always
 
+    # PostgreSQL Replica para Prod
+  postgres_replica_prod:
+    image: postgres:alpine
+    container_name: postgres_replica_prod
+    environment:
+      POSTGRES_USER: ${POSTGRES_PROD_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PROD_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_PROD_DB}
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_replica_prod_data:/var/lib/postgresql/data
+    networks:
+      - shop-management-net
+    command: >
+      postgres -c 'wal_level=replica'
+               -c 'max_wal_senders=10'
+               -c 'hot_standby=on'
+               -c "primary_conninfo=host=postgres_prod port=5432 user=replicator password=replicator_password"
+               -c 'primary_slot_name=replica_slot'
+    depends_on:
+      - postgres_prod
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_PROD_USER} -d ${POSTGRES_PROD_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+
+  postgres_dev:
+    image: postgres:alpine
+    container_name: postgres_dev
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DEV_DB}
+      POSTGRES_USER: ${POSTGRES_DEV_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_DEV_PASSWORD}
+    volumes:
+      - postgres-dev-data:/var/lib/postgresql/data
+    networks:
+      - shop-management-net
+    command: |
+      postgres -c 'wal_keep_size=64MB'
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_DEV_USER} -d ${POSTGRES_DEV_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  postgres_docker:
+    image: postgres:alpine
+    container_name: postgres_docker
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DOCKER_DB}
+      POSTGRES_USER: ${POSTGRES_DOCKER_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_DOCKER_PASSWORD}
+    volumes:
+      - postgres_docker_data:/var/lib/postgresql/data
+    networks:
+      - shop-management-net
+    command: |
+      postgres -c 'wal_level=replica' -c 'max_wal_senders=10' -c 'hot_standby=on'
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_DOCKER_USER} -d ${POSTGRES_DOCKER_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+  # Main MongoDB container for the application
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    env_file:
+      - .env
+    command: [ "mongod", "--wiredTigerCacheSizeGB", "1" ]
+    networks:
+      - shop-management-net
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_ROOT_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_ROOT_PASSWORD}
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_SERVER: 'mongodb'
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_ROOT_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    ports:
+      - '8081:8081'
+    networks:
+      - shop-management-net
+    depends_on:
+      - mongodb
+
+  redis:
+    image: redis:6.2
+    volumes:
+      - redis_data:/var/lib/redis/data
+    ports:
+      - "6379:6379"
+    networks:
+      - shop-management-net
+    command: [ "redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru" ]
+
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:v2.41.0
     container_name: prometheus
     ports:
       - "9090:9090"
@@ -55,9 +244,13 @@ services:
       - "--config.file=/etc/prometheus/prometheus.yml"
     networks:
       - shop-management-net
+    depends_on:
+      - shop-management-system_prod
+      - shop-management-system_dev
+      - shop-management-system_docker
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:9.5.2
     container_name: grafana
     ports:
       - "3000:3000"
@@ -72,12 +265,22 @@ services:
       GF_SECURITY_ADMIN_PASSWORD: admin
 
 volumes:
-  postgres_data:
-    driver: local  # Volume for PostgreSQL persistence
+  postgres_prod_data:
+    driver: local
+  postgres_replica_prod_data:
+    driver: local
+  postgres-dev-data:
+    driver: local
+  postgres_docker_data:
+    driver: local
   prometheus_data:
-    driver: local  # Volume for PostgreSQL persistence
+    driver: local
   grafana_data:
-    driver: local  # Volume for PostgreSQL persistence
+    driver: local
+  redis_data:
+    driver: local
+  mongo_data:
+    driver: local
 
 networks:
   shop-management-net:
