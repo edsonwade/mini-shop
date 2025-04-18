@@ -35,6 +35,7 @@ services:
       - postgres_dev
       - redis
       - mongodb
+
     environment:
       DATABASE_URL: jdbc:postgresql://postgres-dev:5432/${POSTGRES_DEV_DB}
       SERVER_PORT: 8082
