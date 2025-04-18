@@ -19,7 +19,7 @@ RUN mvn clean package -DskipTests
 #########################################
 FROM openjdk:17
 
-# Set environment variables
+# Set environment variable
 ENV SERVER_PORT=8080
 
 # Copy the built JAR file from the build stage to the new image
