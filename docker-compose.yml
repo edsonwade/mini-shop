@@ -32,14 +32,12 @@ services:
     ports:
       - "8082:8082"
     depends_on:
-      postgres_dev:
-        condition: service_healthy
-      redis:
-        condition: service_started
-      mongodb:
-        condition: service_started
+      - postgres_dev
+      - redis
+      - mongodb
+
     environment:
-      DATABASE_URL: jdbc:postgresql://postgres_dev:5432/${POSTGRES_DEV_DB}
+      DATABASE_URL: jdbc:postgresql://postgres-dev:5432/${POSTGRES_DEV_DB}
       SERVER_PORT: 8082
       HIBERNATE_DDL_AUTO: 'update'
       SPRING_PROFILES_ACTIVE: 'dev'
