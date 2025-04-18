@@ -32,12 +32,14 @@ services:
     ports:
       - "8082:8082"
     depends_on:
-      - postgres_dev
-      - redis
-      - mongodb
-
+      postgres_dev:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      mongodb:
+        condition: service_started
     environment:
-      DATABASE_URL: jdbc:postgresql://postgres-dev:5432/${POSTGRES_DEV_DB}
+      DATABASE_URL: jdbc:postgresql://postgres_dev:5432/${POSTGRES_DEV_DB}
       SERVER_PORT: 8082
       HIBERNATE_DDL_AUTO: 'update'
       SPRING_PROFILES_ACTIVE: 'dev'
@@ -64,7 +66,7 @@ services:
       - mongodb
     environment:
       DATABASE_URL: jdbc:postgresql://postgres_docker:5432/${POSTGRES_DOCKER_DB}
-      SERVER_PORT: 8080
+      SERVER_PORT: 8085
       HIBERNATE_DDL_AUTO: 'update'
       SPRING_PROFILES_ACTIVE: 'docker'
     env_file:
@@ -155,6 +157,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
+
 
   postgres_docker:
     image: postgres:alpine

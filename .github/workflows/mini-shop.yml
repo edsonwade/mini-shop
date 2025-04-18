@@ -54,12 +54,6 @@ jobs:
           echo "POSTGRES_DEV_DB=${{ secrets.POSTGRES_DEV_DB }}" >> .env
           echo "POSTGRES_DEV_USER=${{ secrets.POSTGRES_DEV_USER }}" >> .env
           echo "POSTGRES_DEV_PASSWORD=${{ secrets.POSTGRES_DEV_PASSWORD }}" >> .env
-          echo "POSTGRES_PROD_DB=${{ secrets.POSTGRES_PROD_DB }}" >> .env
-          echo "POSTGRES_PROD_USER=${{ secrets.POSTGRES_PROD_USER }}" >> .env
-          echo "POSTGRES_PROD_PASSWORD=${{ secrets.POSTGRES_PROD_PASSWORD }}" >> .env
-          echo "POSTGRES_DOCKER_DB=${{ secrets.POSTGRES_DOCKER_DB }}" >> .env
-          echo "POSTGRES_DOCKER_USER=${{ secrets.POSTGRES_DOCKER_USER }}" >> .env
-          echo "POSTGRES_DOCKER_PASSWORD=${{ secrets.POSTGRES_DOCKER_PASSWORD }}" >> .env
           echo "MONGO_ROOT_USERNAME=${{ secrets.MONGO_ROOT_USERNAME }}" >> .env
           echo "MONGO_ROOT_PASSWORD=${{ secrets.MONGO_ROOT_PASSWORD }}" >> .env
         shell: bash
