@@ -1,19 +1,21 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5436/${POSTGRES_TEST_DB}
-    username: ${POSTGRES_TEST_USERNAME}
-    password: ${POSTGRES_TEST_PASSWORD}
+    url: jdbc:postgresql://localhost:5436/shop-test-db
+    username: test
+    password: test
   jpa:
     hibernate:
-      ddl-auto: create-drop  # This will recreate the database schema for each test
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-  sql:
-    init:
-      mode: always
+
+  # Uncomment the following lines if you want to use Flyway for database migrations
+  # flyway:
+  #   enabled: true
+  #   locations: classpath:db/migration
+
 
 server:
-  port: 8087  # Different port for test environment
-
+  port: 8088
