@@ -113,7 +113,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           CURRENT_DATE=$(date -u +'%Y.%m.%d')
-          TAG_NAME="v${CURRENT_DATE}-${github.run_number}"
+          TAG_NAME="v${CURRENT_DATE}-${{ github.run_number }}"
           git tag $TAG_NAME
           git push origin $TAG_NAME
           echo "Created and pushed tag: $TAG_NAME"
