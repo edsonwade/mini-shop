@@ -2,37 +2,37 @@ version: '3.8'
 
 services:
 
-  shop-management-system_prod:
+  shop-management-system-prod:
     image: edsonwade126/mini-shop-management-system:latest
     container_name: shop-management-prod
     ports:
-      - "8086:8083"
+      - "8086:8086"
     depends_on:
       - postgres_prod
       - redis
       - mongodb
     environment:
       DATABASE_URL: jdbc:postgresql://postgres_prod:5432/${POSTGRES_PROD_DB}
-      SERVER_PORT: 8083
-      HIBERNATE_DDL_AUTO: 'none' # prod
-      SPRING_PROFILES_ACTIVE: 'prod'
+      SERVER_PORT: 8086
+      HIBERNATE_DDL_AUTO: ${HIBERNATE_DDL_PROD_AUTO}
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_PROD_ACTIVE}
     env_file:
       - .env
     networks:
       - shop-management-net
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8083/actuator/health" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:8086/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 70s
     restart: on-failure
 
-  shop-management-system_dev:
+  shop-management-system-dev:
     image: edsonwade126/mini-shop-management-system:latest
     container_name: shop-management-dev
     ports:
-      - "8087:8082"
+      - "8087:8087"
     depends_on:
       - postgres_dev
       - redis
@@ -41,15 +41,15 @@ services:
       DATABASE_URL: jdbc:postgresql://postgres_dev:5432/${POSTGRES_DEV_DB}
       POSTGRES_USER: ${POSTGRES_DEV_USER}
       POSTGRES_PASSWORD: ${POSTGRES_DEV_PASSWORD}
-      HIBERNATE_DDL_AUTO: 'update'
-      SPRING_PROFILES_ACTIVE: 'dev'
-      SERVER_PORT: 8082
+      HIBERNATE_DDL_AUTO: ${HIBERNATE_DDL_DEV_AUTO}
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_DEV_ACTIVE}
+      SERVER_PORT: 8087
     env_file:
       - .env
     networks:
       - shop-management-net
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:8087/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 10
@@ -57,26 +57,26 @@ services:
     restart: on-failure
 
 
-  shop-management-system_docker:
+  shop-management-system-docker:
     image: edsonwade126/mini-shop-management-system:latest
     container_name: shop-management-docker
     ports:
-      - "8085:8080"
+      - "8085:8085"
     depends_on:
       - postgres_docker
       - redis
       - mongodb
     environment:
       DATABASE_URL: jdbc:postgresql://postgres_docker:5432/${POSTGRES_DOCKER_DB}
-      SERVER_PORT: 8080
-      HIBERNATE_DDL_AUTO: 'update'
-      SPRING_PROFILES_ACTIVE: 'docker'
+      SERVER_PORT: 8085
+      HIBERNATE_DDL_AUTO: ${HIBERNATE_DDL_DOCKER_AUTO}
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_DOCKER_ACTIVE}
     env_file:
       - .env
     networks:
       - shop-management-net
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:8085/actuator/health" ]
       interval: 10s
       timeout: 5s
       retries: 10
@@ -270,9 +270,9 @@ services:
     networks:
       - shop-management-net
     depends_on:
-      - shop-management-system_prod
-      - shop-management-system_dev
-      - shop-management-system_docker
+      - shop-management-system-prod
+      - shop-management-system-dev
+      - shop-management-system-docker
 
   grafana:
     image: grafana/grafana:9.5.2
