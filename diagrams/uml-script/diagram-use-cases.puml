@@ -1,0 +1,110 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+' Use Case Diagram for Mini Shop System
+
+left to right direction
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor LightBlue
+  BorderColor DarkBlue
+}
+
+' Actors
+actor "Customer" as customer
+actor "Admin" as admin
+actor "System" as system
+actor "Payment Gateway" as payment
+actor "Shipping Service" as shipping
+
+rectangle "Mini Shop System" {
+  ' Customer Use Cases
+  package "Customer Management" {
+    usecase "Register Account" as UC1
+    usecase "Login" as UC2
+    usecase "Update Profile" as UC3
+    usecase "View Account History" as UC4
+  }
+
+  package "Shopping" {
+    usecase "Browse Products" as UC5
+    usecase "Search Products" as UC6
+    usecase "View Product Details" as UC7
+    usecase "Manage Cart" as UC8
+    usecase "Apply Discount" as UC9
+    usecase "Checkout" as UC10
+  }
+
+  package "Order Management" {
+    usecase "Place Order" as UC11
+    usecase "View Orders" as UC12
+    usecase "Cancel Order" as UC13
+    usecase "Track Shipping" as UC14
+  }
+
+  package "Payment" {
+    usecase "Make Payment" as UC15
+    usecase "Request Refund" as UC16
+  }
+
+  ' Admin Use Cases
+  package "Administration" {
+    usecase "Manage Products" as UC17
+    usecase "Manage Categories" as UC18
+    usecase "Manage Users" as UC19
+    usecase "Manage Orders" as UC20
+    usecase "Create Discounts" as UC21
+    usecase "View Reports" as UC22
+  }
+
+  ' System Use Cases
+  package "System Operations" {
+    usecase "Process Payment" as UC23
+    usecase "Update Inventory" as UC24
+    usecase "Send Notifications" as UC25
+    usecase "Generate Reports" as UC26
+  }
+}
+
+' Customer Relationships
+customer --> UC1
+customer --> UC2
+customer --> UC3
+customer --> UC4
+customer --> UC5
+customer --> UC6
+customer --> UC7
+customer --> UC8
+customer --> UC9
+customer --> UC10
+customer --> UC11
+customer --> UC12
+customer --> UC13
+customer --> UC14
+customer --> UC15
+customer --> UC16
+
+' Admin Relationships
+admin --> UC2
+admin --> UC17
+admin --> UC18
+admin --> UC19
+admin --> UC20
+admin --> UC21
+admin --> UC22
+
+' System Relationships
+system --> UC23
+system --> UC24
+system --> UC25
+system --> UC26
+
+' External Service Relationships
+UC15 --> payment : Process Payment
+UC14 --> shipping : Track Package
+
+' Include Relationships
+UC10 ..> UC15 : <<include>>
+UC11 ..> UC24 : <<include>>
+UC11 ..> UC25 : <<include>>
+UC13 ..> UC16 : <<include>>
+@enduml

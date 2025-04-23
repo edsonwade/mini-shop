@@ -1,0 +1,138 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+skinparam sequenceMessageAlign center
+skinparam sequence {
+    ArrowColor DeepSkyBlue
+    ActorBorderColor DeepSkyBlue
+    LifeLineBorderColor blue
+    LifeLineBackgroundColor #A9DCDF
+
+    ParticipantBorderColor DeepSkyBlue
+    ParticipantBackgroundColor DodgerBlue
+    ParticipantFontName Impact
+    ParticipantFontSize 17
+    ParticipantFontColor #A9DCDF
+}
+
+actor "Customer" as customer
+participant "Client\nModule" as clientModule
+participant "Account\nModule" as accountModule
+participant "Category\nModule" as categoryModule
+participant "Product\nModule" as productModule
+participant "Cart\nModule" as cartModule
+participant "Order\nModule" as orderModule
+participant "OrderItem\nModule" as orderItemModule
+participant "Payment\nModule" as paymentModule
+participant "Shipping\nModule" as shippingModule
+participant "Notification\nModule" as notificationModule
+participant "Discount\nModule" as discountModule
+database "Database" as db
+
+== Authentication & Initial Setup ==
+customer -> clientModule: Login/Register
+activate clientModule
+clientModule -> accountModule: Verify Account
+activate accountModule
+accountModule -> db: Check Credentials
+db --> accountModule: Return Account Status
+accountModule --> clientModule: Account Verified
+deactivate accountModule
+clientModule --> customer: Authentication Success
+deactivate clientModule
+
+== Browse Products ==
+customer -> categoryModule: Browse Categories
+activate categoryModule
+categoryModule -> db: Fetch Categories
+db --> categoryModule: Return Categories
+categoryModule --> customer: Display Categories
+deactivate categoryModule
+
+customer -> productModule: View Products
+activate productModule
+productModule -> db: Fetch Products
+db --> productModule: Return Products
+productModule --> customer: Display Products
+deactivate productModule
+
+== Shopping Cart Operations ==
+customer -> cartModule: Add to Cart
+activate cartModule
+cartModule -> productModule: Check Stock
+activate productModule
+productModule -> db: Verify Availability
+db --> productModule: Stock Status
+productModule --> cartModule: Product Available
+deactivate productModule
+
+cartModule -> discountModule: Apply Discount Code
+activate discountModule
+discountModule -> db: Validate Discount
+db --> discountModule: Discount Valid
+discountModule --> cartModule: Apply Discount
+deactivate discountModule
+
+cartModule -> db: Save Cart
+db --> cartModule: Cart Updated
+cartModule --> customer: Cart Status
+deactivate cartModule
+
+== Checkout Process ==
+customer -> orderModule: Checkout
+activate orderModule
+orderModule -> cartModule: Get Cart Details
+activate cartModule
+cartModule --> orderModule: Cart Items
+deactivate cartModule
+
+orderModule -> orderItemModule: Create Order Items
+activate orderItemModule
+orderItemModule -> db: Save Order Items
+db --> orderItemModule: Items Saved
+orderItemModule --> orderModule: Items Created
+deactivate orderItemModule
+
+orderModule -> paymentModule: Process Payment
+activate paymentModule
+paymentModule -> accountModule: Verify Account Balance
+activate accountModule
+accountModule --> paymentModule: Balance Verified
+deactivate accountModule
+paymentModule -> db: Record Payment
+db --> paymentModule: Payment Recorded
+paymentModule --> orderModule: Payment Success
+deactivate paymentModule
+
+orderModule -> shippingModule: Create Shipment
+activate shippingModule
+shippingModule -> db: Save Shipping Details
+db --> shippingModule: Shipping Created
+shippingModule --> orderModule: Shipping Created
+deactivate shippingModule
+
+orderModule -> notificationModule: Send Confirmations
+activate notificationModule
+notificationModule -> db: Save Notification
+db --> notificationModule: Notification Saved
+notificationModule --> customer: Send Email/SMS
+deactivate notificationModule
+
+orderModule -> productModule: Update Stock
+activate productModule
+productModule -> db: Update Inventory
+db --> productModule: Stock Updated
+productModule --> orderModule: Stock Updated
+deactivate productModule
+
+orderModule --> customer: Order Confirmation
+deactivate orderModule
+
+== Order Tracking ==
+customer -> shippingModule: Track Order
+activate shippingModule
+shippingModule -> db: Get Shipping Status
+db --> shippingModule: Current Status
+shippingModule --> customer: Tracking Info
+deactivate shippingModule
+@enduml
