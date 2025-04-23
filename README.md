@@ -1,48 +1,91 @@
-# Mini Shop Management System
+# 🛍️ Mini Shop Management System
 
-## Description
+## 📋 Description
 
-The **Mini Shop Management System** is a backend application for an e-commerce platform that manages entities such as
-Accounts, Orders, Clients, Payments, ItemOrders, Products, and Addresses. This project demonstrates the use of various
-technologies and frameworks to build a robust and scalable system. It is designed to work seamlessly across different
-environments, including development, production, and Dockerized setups.
+The **Mini Shop Management System** is a robust backend e-commerce platform built with modern technologies. It provides comprehensive management for:
+- 👥 Clients & Accounts
+- 🛒 Orders & Products
+- 💳 Payments
+- 📦 Item Orders
+- 📍 Addresses
 
-## Table of Contents
+Current Version: 1.0.0
+Last Updated: 2025-04-23 16:09:47 UTC
+Maintainer: [@edsonwade](https://github.com/edsonwade)
 
-- [Technologies Used](#technologies-used)
-- [Feature](#features)
-- [System Components](#system-components)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
-- [Deployment](#deployment)
-- [Database Configuration](#database-configuration)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
+## 📑 Table of Contents
 
-## Technologies Used
+- [🚀 Technologies Used](#-technologies-used)
+- [✨ Features](#-features)
+- [🏗️ System Components](#️-system-components)
+- [📋 Prerequisites](#-prerequisites)
+- [⚙️ Installation](#️-installation)
+- [▶️ Running the Application](#️-running-the-application)
+- [🔌 API Endpoints](#-api-endpoints)
+- [🚢 Deployment](#-deployment)
+- [🗄️ Database Configuration](#️-database-configuration)
+- [🧪 Testing](#-testing)
+- [👥 Contributing](#-contributing)
+- [📜 License](#-license)
+- [📬 Contact](#-contact)
+- [🙏 Acknowledgments](#-acknowledgments)
 
-- Java
-- Spring Boot
-- Spring Security
-- HATEOAS
-- Swagger
-- PostgreSQL
-- MongoDB
-- Mockito
-- BDD Cucumber
-- JPA and Hibernate
-- Docker
-- Testcontainers
-- Cache
-- Transitions
-- Loggers
-- Kafka
-- MapStruct
+## 🚀 Technologies Used
+
+### Core Technologies
+- ☕ Java 17
+- 🌱 Spring Boot
+- 🔒 Spring Security
+- 🔗 HATEOAS
+- 📚 Swagger/OpenAPI
+
+### Databases & Caching
+- 🐘 PostgreSQL
+- 🍃 MongoDB
+- 📦 Redis Cache
+
+### Testing & Quality
+- 🧪 Mockito
+- 🥒 BDD Cucumber
+- 🐳 Testcontainers
+
+### Integration & Messaging
+- 🔄 JPA/Hibernate
+- 🐳 Docker
+- 📨 Apache Kafka
+- 🗺️ MapStruct
+
+### Monitoring & Logging
+- 📊 Prometheus
+- 📈 Grafana
+- 📝 Loggers
+
+## ✨ Features
+
+### 🌐 Multi-Environment Support
+- Development (`dev`)
+- Production (`prod`)
+- Dockerized (`docker`)
+
+### 🗄️ Database Integration
+- Primary: PostgreSQL
+- Document Store: MongoDB
+- Caching: Redis
+
+### 📊 Monitoring & Health
+- Real-time health checks
+- Performance metrics
+- System monitoring
+
+### 📈 Scalability
+- Horizontal scaling
+- Load balancing
+- Persistent storage
+
+### 🔒 Security
+- JWT Authentication
+- Role-based access
+- SSL/TLS support
 
 ## Features
 
@@ -75,27 +118,27 @@ environments, including development, production, and Dockerized setups.
     - Simplifies deployment with pre-built Docker images.
     - Configurable via environment variables and Docker Compose.
 
-## System Components
+## 🏗️ System Components
 
-### 1. **Application Services**
+### 🖥️ Application Services
+```yaml
+Main Service:
+  - Port (Docker): 8080
+  - Port (Dev): 8082
+  - Port (Prod): 8083
+  - Profiles: dev, prod, docker
+```
 
-- **Mini-Shop Management System**: The main service that provides APIs for shop management.
-    - Ports: `8080` (Docker), `8082` (Dev), `8083` (Prod).
-    - Profiles: `dev`, `prod`, `docker`.
-- **Technologies**:
-    - Spring Boot
-    - Hibernate ORM
-    - REST APIs
-
-### 2. **Databases**
-
-- **PostgreSQL**:
-    - Used as the main relational database.
-    - Configured for primary and replica setups (production).
-- **MongoDB**:
-    - Used for NoSQL data storage.
-- **Redis**:
-    - Functions as a cache and session store.
+🗄️ Databases
+```yaml
+PostgreSQL:
+  - Primary Database
+  - Replication Support
+MongoDB:
+  - Document Store
+Redis:
+  - Caching Layer
+  ```
 
 ### 3. **Monitoring Tools**
 
@@ -104,29 +147,26 @@ environments, including development, production, and Dockerized setups.
 - **Grafana**:
     - Visualizes metrics with dashboards.
 
-## Prerequisites
+## 📋 Prerequisites
 
-- JDK 17 or higher
-- Maven 3.6 or higher
-- Docker (for containerization)
-- PostgreSQL and MongoDB installed locally or accessible remotely.
+  - ☕ JDK 17+
+  - 📦 Maven 3.6+
+  - 🐳 Docker
+  - 🐘 PostgreSQL
+  - 🍃 MongoDB
 
-## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/mini-shop.git
-   ```
-2. Navigate to the project directory:
+## ⚙️ Installation
+```bash
+# Clone repository
+git clone https://github.com/edsonwade/mini-shop.git
 
-   ```bash
-      cd mini-shop
-   ```
-3. Install the dependencies:
+# Navigate to project
+cd mini-shop
 
-   ```bash
-      mvn clean install
-   ```
+# Install dependencies
+mvn clean install
+```
 
 ## Running the Application
 
@@ -245,14 +285,12 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).📝.
 
 ## Contact
-
 For questions or feedback, please reach out to:
+- 👤 Developer: edsonwade 🐱
 
-- **GitHub**: edsonwade 🐱
+🙏 Acknowledgments
 
-## Acknowledgments
-
-- **Spring Boot**: For the framework 🚀
-- **PostgreSQL**: For the database 🗄️
-- **Flyway Migration**: For database migration 🔄
-- **Mockito**: For testing 🧪
+- 🚀**Spring Boot**: For the framework 
+- 🗄️**PostgreSQL**: For the database 🗄
+- 🔄**Flyway Migration**: For database migration 
+- 🧪**Mockito**: For testing 🧪
