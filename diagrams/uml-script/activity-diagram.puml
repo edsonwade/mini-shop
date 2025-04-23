@@ -1,0 +1,126 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+
+skinparam ActivityBackgroundColor LightBlue
+skinparam ActivityBorderColor DarkBlue
+skinparam ActivityDiamondBackgroundColor LightGreen
+skinparam ActivityDiamondBorderColor DarkGreen
+
+|Client Service|
+start
+:Authenticate Client;
+:Validate Client Account;
+
+|Account Service|
+:Check Account Status;
+:Verify Account Balance;
+
+|Category Service|
+:Load Product Categories;
+
+|Product Service|
+:Display Product Catalog;
+:Show Product Details;
+:Check Stock Quantity;
+
+|Customer|
+repeat
+  :Browse Categories;
+  :Select Product;
+
+  |Cart Service|
+  if (Product Available?) then (yes)
+    :Add to Cart;
+    :Update Cart Items;
+    :Calculate Subtotal;
+
+    |Discount Service|
+    if (Apply Discount Code?) then (yes)
+      :Validate Discount;
+      if (Discount Valid?) then (yes)
+        :Apply Discount to Cart;
+        :Recalculate Total;
+      else (no)
+        :Show Invalid Discount Message;
+      endif
+    endif
+
+    |Customer|
+    :View Cart;
+
+    if (Continue Shopping?) then (yes)
+      |Customer|
+      :Return to Catalog;
+    else (no)
+      :Proceed to Checkout;
+
+      |Order Service|
+      :Create Order from Cart;
+      :Validate Order Details;
+
+      |Order Item Service|
+      :Create Order Items;
+      :Validate Items;
+
+      |Account Service|
+      :Verify Payment Method;
+
+      |Payment Service|
+      repeat
+        :Process Payment;
+        if (Payment Successful?) then (yes)
+
+          |Account Service|
+          :Update Account Balance;
+
+          |Order Service|
+          :Confirm Order;
+
+          |Product Service|
+          :Update Product Stock;
+
+          |Cart Service|
+          :Clear Cart;
+
+          |Shipping Service|
+          :Create Shipping Label;
+          :Schedule Delivery;
+
+          |Notification Service|
+          :Send Order Confirmation;
+          :Send Shipping Details;
+
+          |Customer|
+          :Receive Order Confirmation;
+          :Track Order;
+          break
+
+        else (no)
+          |Notification Service|
+          :Send Payment Failure;
+
+          |Customer|
+          :Review Payment Options;
+        endif
+      repeat while (Retry Payment?) is (yes)
+      ->no;
+    endif
+
+  else (no)
+    |Notification Service|
+    :Show Out of Stock Message;
+
+    |Customer|
+    :Choose Different Product;
+  endif
+
+repeat while (Continue Shopping?) is (yes)
+->no;
+
+|Order Service|
+:Complete Transaction;
+
+stop
+
+@enduml
