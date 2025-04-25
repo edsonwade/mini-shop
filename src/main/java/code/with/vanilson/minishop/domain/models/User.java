@@ -18,13 +18,14 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
+
 @SuppressWarnings("unused")
 @Entity
 @Table(name = "users")
@@ -32,6 +33,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 public class User extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -73,28 +75,4 @@ public class User extends Auditable {
         this.roles.add(role);
     }
 
-    @Override
-    public final boolean equals(Object o) {
-        if (!(o instanceof User user)) {
-            return false;
-        }
-
-        return enabled == user.enabled && accountNonLocked == user.accountNonLocked &&
-                accountNonExpired == user.accountNonExpired && credentialsNonExpired == user.credentialsNonExpired &&
-                Objects.equals(id, user.id) && Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password) && Objects.equals(roles, user.roles);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hashCode(id);
-        result = 31 * result + Objects.hashCode(username);
-        result = 31 * result + Objects.hashCode(password);
-        result = 31 * result + Boolean.hashCode(enabled);
-        result = 31 * result + Boolean.hashCode(accountNonLocked);
-        result = 31 * result + Boolean.hashCode(accountNonExpired);
-        result = 31 * result + Boolean.hashCode(credentialsNonExpired);
-        result = 31 * result + Objects.hashCode(roles);
-        return result;
-    }
 }
