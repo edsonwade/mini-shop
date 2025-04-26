@@ -14,6 +14,12 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+    # Redis configuration
+    redis:
+      host: localhost
+      port: 6380
+      password: ${REDIS_PASSWORD}
+      timeout: 2000
 
   # MongoDB configuration
   data:
