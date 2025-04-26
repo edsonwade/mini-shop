@@ -1,3 +1,85 @@
+2025-04-26 20:03:21,991 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+2025-04-26 20:03:22,107 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 12068 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-26 20:03:22,108 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-26 20:03:22,110 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-26 20:03:22,206 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-26 20:03:22,210 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-26 20:03:24,554 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-26 20:03:24,635 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2025-04-26 20:03:26,124 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-26 20:03:26,140 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:03:26,143 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-26 20:03:26,143 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-26 20:03:26,225 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-26 20:03:26,226 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4015 ms
+2025-04-26 20:03:27,040 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-26 20:03:27,228 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-26 20:03:27,325 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-26 20:03:28,327 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-26 20:03:28,447 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-26 20:03:28,806 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65af0a7a
+2025-04-26 20:03:28,809 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-04-26 20:03:28,917 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-26 20:03:31,550 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-26 20:03:31,734 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Warning Code: 0, SQLState: 00000
+2025-04-26 20:03:31,736 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: constraint "ukghpmfn23vmxfu3spu3lfg4r2d" of relation "refresh_tokens" does not exist, skipping
+2025-04-26 20:03:31,747 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Warning Code: 0, SQLState: 00000
+2025-04-26 20:03:31,747 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: constraint "uk7tdcd6ab5wsgoudnvj7xf1b7l" of relation "refresh_tokens" does not exist, skipping
+2025-04-26 20:03:31,758 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Warning Code: 0, SQLState: 00000
+2025-04-26 20:03:31,761 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: constraint "ukr43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2025-04-26 20:03:31,806 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:03:32,729 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authTokenFilter' configured for use
+2025-04-26 20:03:32,731 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authenticationJwtTokenFilter' configured for use
+2025-04-26 20:03:34,331 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-26 20:03:35,541 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-26 20:03:35,655 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:03:35,676 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-26 20:03:35,699 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 14.675 seconds (process running for 16.085)
+2025-04-26 20:03:36,377 INFO  [RMI TCP Connection(4)-192.168.116.1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-26 20:03:36,378 INFO  [RMI TCP Connection(4)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-04-26 20:03:36,384 INFO  [RMI TCP Connection(4)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Completed initialization in 3 ms
+2025-04-26 20:06:58,903 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:06:58,909 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-04-26 20:06:58,929 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-04-26 20:16:09,224 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+2025-04-26 20:16:09,305 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 2228 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-26 20:16:09,306 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-26 20:16:09,308 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-26 20:16:09,396 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-26 20:16:09,397 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-26 20:16:11,953 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-26 20:16:12,040 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 77 ms. Found 3 JPA repository interfaces.
+2025-04-26 20:16:13,700 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-26 20:16:13,714 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:16:13,717 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-26 20:16:13,717 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-26 20:16:13,786 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-26 20:16:13,786 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4388 ms
+2025-04-26 20:16:14,369 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-26 20:16:14,435 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-26 20:16:14,479 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-26 20:16:14,890 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-26 20:16:14,930 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-26 20:16:15,118 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a57dd4d
+2025-04-26 20:16:15,121 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-04-26 20:16:15,163 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-26 20:16:16,836 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-26 20:16:16,996 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:16:17,536 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authTokenFilter' configured for use
+2025-04-26 20:16:17,538 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authenticationJwtTokenFilter' configured for use
+2025-04-26 20:16:18,923 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-26 20:16:20,175 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-26 20:16:20,294 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:16:20,330 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-26 20:16:20,368 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 12.129 seconds (process running for 13.418)
+2025-04-26 20:16:21,125 INFO  [RMI TCP Connection(2)-192.168.116.1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-26 20:16:21,126 INFO  [RMI TCP Connection(2)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-04-26 20:16:21,134 INFO  [RMI TCP Connection(2)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Completed initialization in 6 ms
+2025-04-26 20:16:32,104 ERROR [http-nio-8082-exec-1] c.w.v.m.i.s.jwt.AuthEntryPointJwt: Unauthorized error: Full authentication is required to access this resource
+2025-04-26 20:16:32,118 ERROR [http-nio-8082-exec-1] c.w.v.m.i.s.jwt.AuthEntryPointJwt: Unauthorized error: Full authentication is required to access this resource
+2025-04-26 20:16:44,968 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:16:44,974 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-04-26 20:16:44,985 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
 2025-04-25 12:59:17,239 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
 2025-04-25 12:59:17,359 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 16452 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
 2025-04-25 12:59:17,360 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
