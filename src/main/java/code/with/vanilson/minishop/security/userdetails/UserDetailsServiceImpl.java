@@ -1,7 +1,7 @@
-package code.with.vanilson.minishop.infrastructure.security.userdetails;
+package code.with.vanilson.minishop.security.userdetails;
 
-import code.with.vanilson.minishop.domain.models.User;
-import code.with.vanilson.minishop.infrastructure.repository.UserRepository;
+import code.with.vanilson.minishop.user.domain.User;
+import code.with.vanilson.minishop.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -5,7 +5,7 @@
  * @version 1.0
  * @since 2024-08-26
  */
-package code.with.vanilson.minishop.application.config;
+package code.with.vanilson.minishop.config;
 
 
 

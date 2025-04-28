@@ -13,8 +13,7 @@
  * </p>
  */
 
-
-package code.with.vanilson.minishop.application.config;
+package code.with.vanilson.minishop.config;
 
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package code.with.vanilson.minishop.infrastructure.security.jwt;
+package code.with.vanilson.minishop.security.jwt;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

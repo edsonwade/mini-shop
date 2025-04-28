@@ -12,10 +12,10 @@
  * @Date:25/04/2025
  */
 
-package code.with.vanilson.minishop.infrastructure.repository;
+package code.with.vanilson.minishop.user.repository;
 
-import code.with.vanilson.minishop.domain.enums.ERole;
-import code.with.vanilson.minishop.domain.models.Role;
+import code.with.vanilson.minishop.user.domain.Role;
+import code.with.vanilson.minishop.user.domain.enums.ERole;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

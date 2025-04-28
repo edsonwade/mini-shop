@@ -4,9 +4,9 @@
  * @Time 19:04
  * @since 2025-04-26
  */
-package code.with.vanilson.minishop.infrastructure.security.userdetails;
+package code.with.vanilson.minishop.security.userdetails;
 
-import code.with.vanilson.minishop.domain.models.User;
+import code.with.vanilson.minishop.user.domain.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
