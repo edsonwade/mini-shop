@@ -13,7 +13,7 @@ import lombok.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@SuppressWarnings("unused")
+@SuppressWarnings("all")
 @Entity
 @Table(name = "users")
 @Getter
@@ -53,7 +53,6 @@ public class User extends Auditable {
         }
         this.username = username;
     }
-
 
     public void addRole(Role role) {
         if (role == null) {

@@ -10,13 +10,16 @@ package code.with.vanilson.minishop.user.domain;
 import code.with.vanilson.minishop.user.domain.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
-
 
 @Table(name = "roles")
 @Entity
@@ -24,7 +27,6 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id", "name"})
 public class Role implements Serializable {
 
     @Serial
@@ -38,4 +40,19 @@ public class Role implements Serializable {
     @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     private Set<User> users = new HashSet<>();
+
+    @Override
+    public final boolean equals(Object o) {
+        if (!(o instanceof Role role)) {return false;}
+
+        return Objects.equals(id, role.id) && name == role.name && Objects.equals(users, role.users);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(id);
+        result = 31 * result + Objects.hashCode(name);
+        result = 31 * result + Objects.hashCode(users);
+        return result;
+    }
 }
