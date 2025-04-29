@@ -12,12 +12,13 @@
  * @Date:25/04/2025me:13:45
  * @Version:1
  */
-package code.with.vanilson.minishop.infrastructure.repository;
+package code.with.vanilson.minishop.user.repository;
 
-import code.with.vanilson.minishop.domain.models.User;
+import code.with.vanilson.minishop.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
+
 @SuppressWarnings("unused")
 
 public interface UserRepository extends JpaRepository<User, Long> {

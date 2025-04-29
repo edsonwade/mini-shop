@@ -1,6 +1,6 @@
-package code.with.vanilson.minishop.infrastructure.security.jwt;
+package code.with.vanilson.minishop.security.jwt;
 
-import code.with.vanilson.minishop.infrastructure.security.userdetails.UserDetailsServiceImpl;
+import code.with.vanilson.minishop.security.userdetails.UserDetailsServiceImpl;
 import io.jsonwebtoken.io.IOException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

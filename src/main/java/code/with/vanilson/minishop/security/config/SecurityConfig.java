@@ -1,8 +1,7 @@
-package code.with.vanilson.minishop.application.config;
+package code.with.vanilson.minishop.security.config;
 
-import code.with.vanilson.minishop.infrastructure.security.jwt.AuthEntryPointJwt;
-import code.with.vanilson.minishop.infrastructure.security.jwt.AuthTokenFilter;
-import code.with.vanilson.minishop.infrastructure.security.userdetails.UserDetailsServiceImpl;
+import code.with.vanilson.minishop.security.jwt.AuthEntryPointJwt;
+import code.with.vanilson.minishop.security.jwt.AuthTokenFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,12 +27,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    private final UserDetailsServiceImpl userDetailsService;
 
     private final AuthEntryPointJwt unauthorizedHandler;
 
-    public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthEntryPointJwt unauthorizedHandler) {
-        this.userDetailsService = userDetailsService;
+    public SecurityConfig(AuthEntryPointJwt unauthorizedHandler) {
         this.unauthorizedHandler = unauthorizedHandler;
     }
 
@@ -47,6 +44,17 @@ public class SecurityConfig {
                         auth
                                 .requestMatchers("/api/auth/**").permitAll()
                                 .requestMatchers("/api/test/**").permitAll()
+                                .requestMatchers("/actuator/**").permitAll()
+                                .requestMatchers("/prometheus/**").permitAll()
+                                .requestMatchers("/grafana/**").permitAll()
+                                .requestMatchers("/metrics/**").permitAll()
+                                .requestMatchers("/swagger-ui/**").permitAll()
+                                .requestMatchers("/swagger-ui.html").permitAll()
+                                .requestMatchers("/swagger-resources/**").permitAll()
+                                .requestMatchers("/v3/api-docs/**").permitAll()
+                                .requestMatchers("/v3/api-docs.yml").permitAll()
+                                .requestMatchers("/webjars/**").permitAll()
+
                                 .anyRequest().authenticated()
                 );
 

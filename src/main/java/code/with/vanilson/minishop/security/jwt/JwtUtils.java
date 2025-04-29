@@ -6,9 +6,9 @@
  * @description This class is responsible for handling JWT (JSON Web Token) operations.
  * It includes methods for generating, validating, and parsing JWTs.
  */
-package code.with.vanilson.minishop.infrastructure.security.jwt;
+package code.with.vanilson.minishop.security.jwt;
 
-import code.with.vanilson.minishop.infrastructure.security.userdetails.UserDetailsImpl;
+import code.with.vanilson.minishop.security.userdetails.UserDetailsImpl;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

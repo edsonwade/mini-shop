@@ -1,4 +1,4 @@
-package code.with.vanilson.minishop.presentation.exception;
+package code.with.vanilson.minishop.exception;
 
 import java.io.Serial;
 
