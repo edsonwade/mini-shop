@@ -1,0 +1,112 @@
+image: maven:17-eclipse-temurin
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  DOCKER_REGISTRY: "$CI_REGISTRY"
+
+cache:
+  paths:
+    - .m2/repository
+
+stages:
+  - validate
+  - build
+  - test
+  - package
+  - deploy
+
+validate_files:
+  stage: validate
+  script:
+    - |
+      if [ ! -f "pom.xml" ]; then
+        echo "Error: pom.xml not found!"
+        exit 1
+      fi
+      if [ ! -f "Dockerfile" ]; then
+        echo "Error: Dockerfile not found!"
+        exit 1
+      fi
+
+install_docker_compose:
+  stage: validate
+  script:
+    - |
+      curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-$(uname -s)-$(uname -m)" \
+        -o /usr/local/bin/docker-compose
+      chmod +x /usr/local/bin/docker-compose
+      docker-compose version
+
+build_and_test:
+  stage: build
+  script:
+    - mvn clean verify
+  artifacts:
+    paths:
+      - target/
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: target/site/jacoco/jacoco.xml
+
+check_coverage:
+  stage: test
+  script:
+    - |
+      COVERAGE=$(mvn jacoco:report | grep -o "Total.*" | awk '{print $4}' | cut -d'%' -f1)
+      if [ -n "$COVERAGE" ] && [ "$COVERAGE" -lt 80 ]; then
+        echo "Warning: Test coverage is below 80%: $COVERAGE%"
+      fi
+
+docker_build_push:
+  stage: package
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  script:
+    - |
+      BUILD_DATE=$(date -u +'%Y-%m-%d_%H:%M:%S')
+      GIT_COMMIT=$(git rev-parse --short HEAD)
+      
+      docker build \
+        --build-arg BUILD_DATE="$BUILD_DATE" \
+        --build-arg GIT_COMMIT="$GIT_COMMIT" \
+        -t $DOCKER_USERNAME/mini-shop-management-system:latest \
+        -t $DOCKER_USERNAME/mini-shop-management-system:$CI_PIPELINE_IID .
+      
+      docker push $DOCKER_USERNAME/mini-shop-management-system:latest
+      docker push $DOCKER_USERNAME/mini-shop-management-system:$CI_PIPELINE_IID
+
+verify_docker:
+  stage: package
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - |
+      docker pull $DOCKER_USERNAME/mini-shop-management-system:latest
+      docker inspect $DOCKER_USERNAME/mini-shop-management-system:latest
+
+create_release_tag:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - |
+      CURRENT_DATE=$(date -u +'%Y.%m.%d')
+      TAG_NAME="v${CURRENT_DATE}-${CI_PIPELINE_IID}"
+      git config --global user.email "${GITLAB_USER_EMAIL}"
+      git config --global user.name "${GITLAB_USER_NAME}"
+      git tag $TAG_NAME
+      git push origin $TAG_NAME
+      echo "Created and pushed tag: $TAG_NAME"
+
+cleanup:
+  stage: .post
+  script:
+    - rm -rf .m2/repository
+  when: always
