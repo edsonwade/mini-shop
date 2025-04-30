@@ -251,7 +251,7 @@ services:
     volumes:
       - redis_data:/var/lib/redis/data
     ports:
-      - "6379:6379"
+      - "6380:6379"
     networks:
       - shop-management-net
     command: [ "redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru" ]

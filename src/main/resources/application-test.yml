@@ -10,6 +10,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  security:
+    enabled: false
 
   # Uncomment the following lines if you want to use Flyway for database migrations
   # flyway:

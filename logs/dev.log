@@ -1,465 +1,110 @@
-2025-04-19 00:23:29,442 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 00:23:29,555 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 18610 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 00:23:29,558 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 00:23:29,561 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
-2025-04-19 00:23:29,668 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 00:23:29,668 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 00:23:31,476 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 00:23:31,518 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
-2025-04-19 00:23:32,771 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
-2025-04-19 00:23:32,799 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
-2025-04-19 00:23:32,803 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 00:23:32,804 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 00:23:32,916 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 00:23:32,917 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3247 ms
-2025-04-19 00:23:33,561 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 00:23:33,650 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 00:23:33,711 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 00:23:34,354 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 00:23:34,405 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 00:23:34,753 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@667b5b53
-2025-04-19 00:23:34,758 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 00:23:34,835 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 00:23:35,514 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 00:23:35,525 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 00:23:38,076 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 00:23:38,091 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 00:23:38,267 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
-2025-04-19 00:23:38,312 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
-2025-04-19 00:23:38,355 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 9.797 seconds (process running for 11.251)
-2025-04-19 00:23:50,486 INFO  [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-19 00:23:50,487 INFO  [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
-2025-04-19 00:23:50,491 INFO  [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 4 ms
-2025-04-19 00:24:46,094 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 00:24:46,101 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 00:24:46,110 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 13:08:27,494 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 13:08:27,578 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 18589 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 13:08:27,581 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 13:08:27,586 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
-2025-04-19 13:08:27,697 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 13:08:27,698 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 13:08:30,282 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 13:08:30,313 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
-2025-04-19 13:08:31,559 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
-2025-04-19 13:08:31,577 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
-2025-04-19 13:08:31,580 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 13:08:31,581 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 13:08:31,640 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 13:08:31,641 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3942 ms
-2025-04-19 13:08:32,139 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 13:08:32,240 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 13:08:32,298 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 13:08:32,718 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 13:08:32,782 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 13:08:33,206 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4c6cd92f
-2025-04-19 13:08:33,211 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 13:08:33,293 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 13:08:34,236 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 13:08:34,245 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 13:08:36,317 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 13:08:36,330 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 13:08:36,451 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
-2025-04-19 13:08:36,474 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
-2025-04-19 13:08:36,516 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 10.71 seconds (process running for 13.064)
-2025-04-19 13:09:11,169 INFO  [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-19 13:09:11,169 INFO  [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
-2025-04-19 13:09:11,172 INFO  [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet: Completed initialization in 2 ms
-2025-04-19 13:18:21,517 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 13:18:21,527 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 13:18:21,535 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 14:53:16,756 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 14:53:16,867 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 9794 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 14:53:16,869 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 14:53:16,873 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "prod"
-2025-04-19 14:53:16,981 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 14:53:16,981 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 14:53:19,800 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 14:53:19,847 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
-2025-04-19 14:53:21,505 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8083 (http)
-2025-04-19 14:53:21,536 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8083"]
-2025-04-19 14:53:21,541 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 14:53:21,542 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 14:53:21,642 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 14:53:21,644 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4661 ms
-2025-04-19 14:53:22,177 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-2025-04-19 14:53:22,183 INFO  [restartedMain] o.a.catalina.core.StandardService: Stopping service [Tomcat]
-2025-04-19 14:53:22,285 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger: 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-19 14:53:22,381 ERROR [restartedMain] o.s.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at code.with.vanilson.minishop.MiniShopApplication.main(MiniShopApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	... 15 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 25 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 39 common frames omitted
-Caused by: java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.util.Assert.isTrue(Assert.java:111)
-	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:284)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:180)
-	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
-	... 40 common frames omitted
-2025-04-19 14:53:45,785 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 14:53:45,858 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 12347 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 14:53:45,860 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 14:53:45,864 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "prod"
-2025-04-19 14:53:45,966 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 14:53:45,967 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 14:53:48,113 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 14:53:48,157 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 28 ms. Found 0 JPA repository interfaces.
-2025-04-19 14:53:49,210 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8083 (http)
-2025-04-19 14:53:49,225 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8083"]
-2025-04-19 14:53:49,228 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 14:53:49,228 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 14:53:49,310 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 14:53:49,311 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3342 ms
-2025-04-19 14:53:49,682 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-2025-04-19 14:53:49,687 INFO  [restartedMain] o.a.catalina.core.StandardService: Stopping service [Tomcat]
-2025-04-19 14:53:49,730 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger: 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-19 14:53:49,756 ERROR [restartedMain] o.s.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at code.with.vanilson.minishop.MiniShopApplication.main(MiniShopApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	... 15 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 25 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 39 common frames omitted
-Caused by: java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.util.Assert.isTrue(Assert.java:111)
-	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:284)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:180)
-	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
-	... 40 common frames omitted
-2025-04-19 14:55:01,026 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 14:55:01,081 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 16505 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 14:55:01,082 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 14:55:01,084 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "prod"
-2025-04-19 14:55:01,174 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 14:55:01,175 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 14:55:02,925 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 14:55:02,964 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 22 ms. Found 0 JPA repository interfaces.
-2025-04-19 14:55:04,150 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8083 (http)
-2025-04-19 14:55:04,174 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8083"]
-2025-04-19 14:55:04,179 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 14:55:04,180 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 14:55:04,259 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 14:55:04,260 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3083 ms
-2025-04-19 14:55:04,663 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-2025-04-19 14:55:04,669 INFO  [restartedMain] o.a.catalina.core.StandardService: Stopping service [Tomcat]
-2025-04-19 14:55:04,721 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger: 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-19 14:55:04,750 ERROR [restartedMain] o.s.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at code.with.vanilson.minishop.MiniShopApplication.main(MiniShopApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	... 15 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 25 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 39 common frames omitted
-Caused by: java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.util.Assert.isTrue(Assert.java:111)
-	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:284)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:180)
-	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
-	... 40 common frames omitted
-2025-04-19 14:56:47,831 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 14:56:47,894 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 21578 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 14:56:47,896 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 14:56:47,898 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "prod"
-2025-04-19 14:56:47,984 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 14:56:47,985 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 14:56:50,268 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 14:56:50,300 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 20 ms. Found 0 JPA repository interfaces.
-2025-04-19 14:56:51,384 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8083 (http)
-2025-04-19 14:56:51,398 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8083"]
-2025-04-19 14:56:51,401 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 14:56:51,401 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 14:56:51,488 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 14:56:51,489 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3502 ms
-2025-04-19 14:56:51,842 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-2025-04-19 14:56:51,847 INFO  [restartedMain] o.a.catalina.core.StandardService: Stopping service [Tomcat]
-2025-04-19 14:56:51,884 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger: 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-19 14:56:51,909 ERROR [restartedMain] o.s.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'dataSourceScriptDatabaseInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at code.with.vanilson.minishop.MiniShopApplication.main(MiniShopApplication.java:10)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	... 15 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1448)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1358)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
-	... 25 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
-	... 39 common frames omitted
-Caused by: java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.util.Assert.isTrue(Assert.java:111)
-	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:284)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:180)
-	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
-	... 40 common frames omitted
-2025-04-19 15:00:29,127 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:00:29,191 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 32766 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:00:29,192 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:00:29,195 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "prod"
-2025-04-19 15:00:29,269 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:00:29,270 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:00:31,170 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:00:31,199 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:00:32,157 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8083 (http)
-2025-04-19 15:00:32,182 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8083"]
-2025-04-19 15:00:32,185 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:00:32,185 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:00:32,247 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:00:32,249 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2977 ms
-2025-04-19 15:00:32,647 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:00:32,700 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:00:32,735 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:00:33,071 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:00:33,112 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:00:33,330 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@32a5e120
-2025-04-19 15:00:33,333 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:00:33,373 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 15:00:33,851 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:00:33,860 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:00:35,679 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:00:35,706 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:00:35,818 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8083"]
-2025-04-19 15:00:35,839 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8083 (http) with context path '/'
-2025-04-19 15:00:35,866 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 7.406 seconds (process running for 8.258)
-2025-04-19 15:01:23,067 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:01:23,074 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:01:23,087 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 15:08:06,962 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:08:07,032 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 17499 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:08:07,033 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:08:07,035 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:08:07,116 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:08:07,117 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:08:08,675 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:08:08,698 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:08:09,754 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8088 (http)
-2025-04-19 15:08:09,779 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:08:09,782 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:08:09,783 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:08:09,859 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:08:09,860 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2742 ms
-2025-04-19 15:08:10,322 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:08:10,388 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:08:10,429 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:08:10,810 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:08:10,848 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:08:12,023 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Error: 0, SQLState: 3D000
-2025-04-19 15:08:12,024 ERROR [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: FATAL: database "${POSTGRES_TEST_DB}" does not exist
-2025-04-19 15:08:12,026 WARN  [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator: HHH000342: Could not obtain connection to query metadata
-org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [FATAL: database "${POSTGRES_TEST_DB}" does not exist] [n/a]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63)
+2025-04-26 20:03:21,991 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+2025-04-26 20:03:22,107 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 12068 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-26 20:03:22,108 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-26 20:03:22,110 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-26 20:03:22,206 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-26 20:03:22,210 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-26 20:03:24,554 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-26 20:03:24,635 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 65 ms. Found 3 JPA repository interfaces.
+2025-04-26 20:03:26,124 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-26 20:03:26,140 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:03:26,143 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-26 20:03:26,143 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-26 20:03:26,225 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-26 20:03:26,226 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4015 ms
+2025-04-26 20:03:27,040 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-26 20:03:27,228 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-26 20:03:27,325 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-26 20:03:28,327 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-26 20:03:28,447 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-26 20:03:28,806 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65af0a7a
+2025-04-26 20:03:28,809 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-04-26 20:03:28,917 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-26 20:03:31,550 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-26 20:03:31,734 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Warning Code: 0, SQLState: 00000
+2025-04-26 20:03:31,736 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: constraint "ukghpmfn23vmxfu3spu3lfg4r2d" of relation "refresh_tokens" does not exist, skipping
+2025-04-26 20:03:31,747 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Warning Code: 0, SQLState: 00000
+2025-04-26 20:03:31,747 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: constraint "uk7tdcd6ab5wsgoudnvj7xf1b7l" of relation "refresh_tokens" does not exist, skipping
+2025-04-26 20:03:31,758 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Warning Code: 0, SQLState: 00000
+2025-04-26 20:03:31,761 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: constraint "ukr43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2025-04-26 20:03:31,806 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:03:32,729 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authTokenFilter' configured for use
+2025-04-26 20:03:32,731 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authenticationJwtTokenFilter' configured for use
+2025-04-26 20:03:34,331 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-26 20:03:35,541 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-26 20:03:35,655 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:03:35,676 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-26 20:03:35,699 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 14.675 seconds (process running for 16.085)
+2025-04-26 20:03:36,377 INFO  [RMI TCP Connection(4)-192.168.116.1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-26 20:03:36,378 INFO  [RMI TCP Connection(4)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-04-26 20:03:36,384 INFO  [RMI TCP Connection(4)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Completed initialization in 3 ms
+2025-04-26 20:06:58,903 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:06:58,909 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-04-26 20:06:58,929 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-04-26 20:16:09,224 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+2025-04-26 20:16:09,305 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 2228 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-26 20:16:09,306 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-26 20:16:09,308 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-26 20:16:09,396 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-26 20:16:09,397 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-26 20:16:11,953 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-26 20:16:12,040 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 77 ms. Found 3 JPA repository interfaces.
+2025-04-26 20:16:13,700 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-26 20:16:13,714 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:16:13,717 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-26 20:16:13,717 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-26 20:16:13,786 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-26 20:16:13,786 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4388 ms
+2025-04-26 20:16:14,369 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-26 20:16:14,435 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-26 20:16:14,479 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-26 20:16:14,890 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-26 20:16:14,930 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-26 20:16:15,118 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a57dd4d
+2025-04-26 20:16:15,121 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-04-26 20:16:15,163 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-26 20:16:16,836 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-26 20:16:16,996 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:16:17,536 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authTokenFilter' configured for use
+2025-04-26 20:16:17,538 DEBUG [restartedMain] c.w.v.m.i.s.jwt.AuthTokenFilter: Filter 'authenticationJwtTokenFilter' configured for use
+2025-04-26 20:16:18,923 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-26 20:16:20,175 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-26 20:16:20,294 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-26 20:16:20,330 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-26 20:16:20,368 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 12.129 seconds (process running for 13.418)
+2025-04-26 20:16:21,125 INFO  [RMI TCP Connection(2)-192.168.116.1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-26 20:16:21,126 INFO  [RMI TCP Connection(2)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-04-26 20:16:21,134 INFO  [RMI TCP Connection(2)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Completed initialization in 6 ms
+2025-04-26 20:16:32,104 ERROR [http-nio-8082-exec-1] c.w.v.m.i.s.jwt.AuthEntryPointJwt: Unauthorized error: Full authentication is required to access this resource
+2025-04-26 20:16:32,118 ERROR [http-nio-8082-exec-1] c.w.v.m.i.s.jwt.AuthEntryPointJwt: Unauthorized error: Full authentication is required to access this resource
+2025-04-26 20:16:44,968 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-26 20:16:44,974 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-04-26 20:16:44,985 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-04-25 12:59:17,239 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 12:59:17,359 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 16452 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-25 12:59:17,360 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-25 12:59:17,362 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-25 12:59:17,464 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-25 12:59:17,466 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-25 12:59:20,001 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 12:59:20,043 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+2025-04-25 12:59:23,619 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-25 12:59:23,643 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-25 12:59:23,646 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-25 12:59:23,646 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 12:59:23,735 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-25 12:59:23,736 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 6269 ms
+2025-04-25 12:59:24,371 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 12:59:24,526 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-25 12:59:24,602 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-25 12:59:25,401 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 12:59:25,472 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-25 12:59:26,548 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Error: 0, SQLState: 08001
+2025-04-25 12:59:26,548 ERROR [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025-04-25 12:59:26,550 WARN  [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator: HHH000342: Could not obtain connection to query metadata
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
@@ -501,13 +146,10 @@ org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC con
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.postgresql.util.PSQLException: FATAL: database "${POSTGRES_TEST_DB}" does not exist
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
-	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2845)
-	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:176)
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:323)
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
 	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
 	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
 	at org.postgresql.Driver.makeConnection(Driver.java:446)
@@ -523,15 +165,156 @@ Caused by: org.postgresql.util.PSQLException: FATAL: database "${POSTGRES_TEST_D
 	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:439)
 	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
 	... 40 common frames omitted
-2025-04-19 15:08:12,029 ERROR [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2025-04-19 15:08:12,030 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-2025-04-19 15:08:12,036 INFO  [restartedMain] o.a.catalina.core.StandardService: Stopping service [Tomcat]
-2025-04-19 15:08:12,064 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLogger: 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-04-19 15:08:12,088 ERROR [restartedMain] o.s.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 54 common frames omitted
+2025-04-25 12:59:26,596 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-25 12:59:27,779 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 12:59:27,803 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 12:59:30,743 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-25 12:59:30,768 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-25 12:59:30,989 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-25 12:59:31,104 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-25 12:59:31,147 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 15.499 seconds (process running for 18.185)
+2025-04-25 12:59:32,523 INFO  [RMI TCP Connection(2)-192.168.116.1] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-25 12:59:32,880 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener: Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
+2025-04-25 12:59:32,888 INFO  [RMI TCP Connection(4)-192.168.116.1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-25 12:59:32,889 INFO  [RMI TCP Connection(4)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-04-25 12:59:32,893 INFO  [RMI TCP Connection(4)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Completed initialization in 3 ms
+2025-04-25 12:59:32,916 INFO  [Thread-5] o.a.coyote.http11.Http11NioProtocol: Stopping ProtocolHandler ["http-nio-8082"]
+2025-04-25 12:59:33,532 WARN  [RMI TCP Connection(2)-192.168.116.1] o.s.b.a.j.DataSourceHealthIndicator: DataSource health check failed
+org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:342)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.getProduct(DataSourceHealthIndicator.java:122)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doDataSourceHealthCheck(DataSourceHealthIndicator.java:105)
+	at org.springframework.boot.actuate.jdbc.DataSourceHealthIndicator.doHealthCheck(DataSourceHealthIndicator.java:100)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:82)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:76)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 47 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 61 common frames omitted
+2025-04-25 12:59:35,309 INFO  [Thread-5] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 12:59:35,471 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 16452 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-25 12:59:35,472 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-25 12:59:35,472 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-25 12:59:36,319 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 12:59:36,323 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-04-25 12:59:36,624 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-25 12:59:36,625 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-25 12:59:36,626 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-25 12:59:36,627 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 12:59:36,665 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-25 12:59:36,666 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1191 ms
+2025-04-25 12:59:37,055 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 12:59:37,063 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-25 12:59:37,092 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 12:59:37,094 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Starting...
+2025-04-25 12:59:38,102 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: SQL Error: 0, SQLState: 08001
+2025-04-25 12:59:38,103 ERROR [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper: Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2025-04-25 12:59:38,104 WARN  [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator: HHH000342: Could not obtain connection to query metadata
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:292)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:124)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:78)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
@@ -550,349 +333,87 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
-	... 20 common frames omitted
-Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:153)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:364)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:124)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:78)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 35 common frames omitted
-2025-04-19 15:21:28,542 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:21:28,591 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 14440 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:21:28,593 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:21:28,595 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:21:28,654 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:21:28,655 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:21:30,123 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:21:30,148 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:21:30,927 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
-2025-04-19 15:21:30,947 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-19 15:21:30,950 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:21:30,951 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:21:31,007 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:21:31,008 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2352 ms
-2025-04-19 15:21:31,401 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:21:31,450 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:21:31,484 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:21:31,834 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:21:31,865 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:21:32,039 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21276185
-2025-04-19 15:21:32,044 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:21:32,500 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:21:32,506 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:21:32,756 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-19 15:21:33,890 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:21:33,903 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:21:33,985 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
-2025-04-19 15:21:33,999 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
-2025-04-19 15:21:34,021 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 6.042 seconds (process running for 6.987)
-2025-04-19 15:22:39,631 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:22:39,635 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:22:39,650 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 15:22:44,676 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:22:44,729 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 18339 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:22:44,731 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:22:44,733 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:22:44,795 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:22:44,796 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:22:46,433 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:22:46,465 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:22:47,781 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
-2025-04-19 15:22:47,812 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-19 15:22:47,818 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:22:47,819 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:22:47,972 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:22:47,973 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3176 ms
-2025-04-19 15:22:48,661 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:22:48,774 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:22:48,847 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:22:49,412 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:22:49,456 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:22:49,666 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13b2b0e
-2025-04-19 15:22:49,671 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:22:50,266 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:22:50,275 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:22:50,666 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-19 15:22:51,898 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:22:51,910 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:22:52,004 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
-2025-04-19 15:22:52,020 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
-2025-04-19 15:22:52,042 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 8.06 seconds (process running for 9.118)
-2025-04-19 15:23:51,011 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:23:51,030 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:23:51,045 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 15:23:55,446 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:23:55,500 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 21978 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:23:55,501 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:23:55,503 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:23:55,565 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:23:55,565 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:23:57,212 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:23:57,242 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 18 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:23:58,394 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
-2025-04-19 15:23:58,423 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-19 15:23:58,427 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:23:58,428 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:23:58,515 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:23:58,516 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2950 ms
-2025-04-19 15:23:59,047 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:23:59,118 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:23:59,169 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:23:59,691 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:23:59,741 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:24:00,002 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@67472037
-2025-04-19 15:24:00,007 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:24:00,759 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:24:00,767 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:24:01,151 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-19 15:24:02,419 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:24:02,430 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:24:02,523 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8080"]
-2025-04-19 15:24:02,540 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
-2025-04-19 15:24:02,563 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 7.821 seconds (process running for 8.692)
-2025-04-19 15:24:04,456 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:24:04,461 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:24:04,468 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 15:24:36,808 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:24:36,861 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 24665 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:24:36,862 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:24:36,865 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
-2025-04-19 15:24:36,944 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:24:36,945 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:24:38,968 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:24:39,004 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 22 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:24:40,005 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
-2025-04-19 15:24:40,020 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:24:40,022 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:24:40,023 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:24:40,099 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:24:40,101 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3154 ms
-2025-04-19 15:24:40,574 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:24:40,634 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:24:40,673 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:24:41,031 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:24:41,073 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:24:41,264 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3ab85dfd
-2025-04-19 15:24:41,270 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:24:41,314 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 15:24:42,030 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:24:42,038 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:24:43,626 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:24:43,639 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:24:43,730 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:24:43,748 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
-2025-04-19 15:24:43,772 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 7.688 seconds (process running for 8.755)
-2025-04-19 15:25:11,055 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener: Restarting due to 12 class path changes (0 additions, 2 deletions, 10 modifications)
-2025-04-19 15:25:11,073 INFO  [Thread-5] o.a.coyote.http11.Http11NioProtocol: Stopping ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:25:11,094 INFO  [Thread-5] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:25:11,103 INFO  [Thread-5] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:25:11,108 INFO  [Thread-5] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 15:25:11,300 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 24665 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:25:11,301 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:25:11,301 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:25:12,192 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:25:12,195 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:25:12,622 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8088 (http)
-2025-04-19 15:25:12,625 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:12,626 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:25:12,627 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:25:12,650 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:25:12,651 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1345 ms
-2025-04-19 15:25:13,096 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:25:13,106 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:25:13,143 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:25:13,149 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Starting...
-2025-04-19 15:25:13,209 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@157b5bf7
-2025-04-19 15:25:13,210 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Start completed.
-2025-04-19 15:25:13,331 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:25:13,333 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:25:13,544 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-19 15:25:14,853 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:25:14,870 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:25:14,970 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:14,976 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8088 (http) with context path '/'
-2025-04-19 15:25:15,004 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 3.782 seconds (process running for 39.987)
-2025-04-19 15:25:15,012 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener: Condition evaluation unchanged
-2025-04-19 15:25:16,251 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener: Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
-2025-04-19 15:25:16,254 INFO  [Thread-7] o.a.coyote.http11.Http11NioProtocol: Stopping ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:16,261 INFO  [Thread-7] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:25:16,264 INFO  [Thread-7] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Shutdown initiated...
-2025-04-19 15:25:16,272 INFO  [Thread-7] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Shutdown completed.
-2025-04-19 15:25:16,463 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 24665 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:25:16,464 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:25:16,464 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:25:17,381 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:25:17,385 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:25:17,817 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8088 (http)
-2025-04-19 15:25:17,819 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:17,822 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:25:17,827 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:25:17,862 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:25:17,863 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1394 ms
-2025-04-19 15:25:18,259 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:25:18,269 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:25:18,293 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:25:18,296 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Starting...
-2025-04-19 15:25:18,355 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@f0a65a9
-2025-04-19 15:25:18,358 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Start completed.
-2025-04-19 15:25:18,447 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:25:18,448 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:25:18,700 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-19 15:25:19,592 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:25:19,600 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:25:19,659 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:19,666 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8088 (http) with context path '/'
-2025-04-19 15:25:19,688 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 3.291 seconds (process running for 44.671)
-2025-04-19 15:25:19,694 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener: Condition evaluation unchanged
-2025-04-19 15:25:23,683 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:25:23,685 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Shutdown initiated...
-2025-04-19 15:25:23,692 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Shutdown completed.
-2025-04-19 15:25:28,701 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:25:28,762 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 27760 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:25:28,764 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:25:28,767 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "test"
-2025-04-19 15:25:28,840 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:25:28,841 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:25:30,479 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:25:30,505 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 16 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:25:31,644 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8088 (http)
-2025-04-19 15:25:31,669 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:31,673 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:25:31,674 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:25:31,758 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:25:31,759 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2917 ms
-2025-04-19 15:25:32,441 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:25:32,530 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:25:32,575 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:25:32,981 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:25:33,017 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:25:33,193 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23c049aa
-2025-04-19 15:25:33,197 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:25:33,767 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:25:33,776 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:25:34,125 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-19 15:25:35,405 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:25:35,417 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:25:35,530 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:25:35,553 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8088 (http) with context path '/'
-2025-04-19 15:25:35,588 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 7.657 seconds (process running for 8.819)
-2025-04-19 15:26:00,841 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener: Restarting due to 12 class path changes (0 additions, 2 deletions, 10 modifications)
-2025-04-19 15:26:00,863 INFO  [Thread-5] o.a.coyote.http11.Http11NioProtocol: Stopping ProtocolHandler ["http-nio-8088"]
-2025-04-19 15:26:00,888 INFO  [Thread-5] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:26:00,898 INFO  [Thread-5] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:26:00,906 INFO  [Thread-5] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
-2025-04-19 15:26:01,131 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 27760 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:26:01,132 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:26:01,132 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
-2025-04-19 15:26:01,953 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:26:01,957 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:26:02,356 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
-2025-04-19 15:26:02,358 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:02,359 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:26:02,360 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:26:02,384 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:26:02,385 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1248 ms
-2025-04-19 15:26:02,792 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:26:02,798 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:26:02,824 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:26:02,827 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Starting...
-2025-04-19 15:26:02,877 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@4c0bda1b
-2025-04-19 15:26:02,878 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Start completed.
-2025-04-19 15:26:02,890 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 15:26:02,941 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:26:02,942 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:26:04,517 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:26:04,532 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:26:04,618 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:04,626 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
-2025-04-19 15:26:04,658 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 3.611 seconds (process running for 37.89)
-2025-04-19 15:26:04,667 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener: Condition evaluation unchanged
-2025-04-19 15:26:05,916 INFO  [File Watcher] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener: Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
-2025-04-19 15:26:05,920 INFO  [Thread-7] o.a.coyote.http11.Http11NioProtocol: Stopping ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:05,947 INFO  [Thread-7] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:26:05,950 INFO  [Thread-7] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Shutdown initiated...
-2025-04-19 15:26:05,962 INFO  [Thread-7] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Shutdown completed.
-2025-04-19 15:26:06,285 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 27760 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:26:06,286 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:26:06,287 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
-2025-04-19 15:26:07,281 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:26:07,286 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:26:07,736 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
-2025-04-19 15:26:07,737 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:07,739 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:26:07,740 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:26:07,766 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:26:07,767 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1470 ms
-2025-04-19 15:26:08,080 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:26:08,088 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:26:08,111 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:26:08,115 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Starting...
-2025-04-19 15:26:08,170 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@5c3b420e
-2025-04-19 15:26:08,171 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Start completed.
-2025-04-19 15:26:08,179 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 15:26:08,228 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:26:08,229 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:26:09,616 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:26:09,625 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:26:09,671 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:09,677 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
-2025-04-19 15:26:09,705 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 3.555 seconds (process running for 42.936)
-2025-04-19 15:26:09,709 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener: Condition evaluation unchanged
-2025-04-19 15:26:24,449 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:26:24,451 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Shutdown initiated...
-2025-04-19 15:26:24,454 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Shutdown completed.
-2025-04-19 15:26:29,730 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
-2025-04-19 15:26:29,813 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.10 with PID 31125 (/home/user/Documents/developments/projects/mini-shop/target/classes started by user in /home/user/Documents/developments/projects/mini-shop)
-2025-04-19 15:26:29,815 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
-2025-04-19 15:26:29,819 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
-2025-04-19 15:26:29,920 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-19 15:26:29,921 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-19 15:26:31,705 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-19 15:26:31,730 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 16 ms. Found 0 JPA repository interfaces.
-2025-04-19 15:26:32,684 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
-2025-04-19 15:26:32,703 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:32,706 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
-2025-04-19 15:26:32,707 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-19 15:26:32,828 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-2025-04-19 15:26:32,830 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 2905 ms
-2025-04-19 15:26:33,453 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-19 15:26:33,529 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-04-19 15:26:33,567 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
-2025-04-19 15:26:33,906 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-19 15:26:33,946 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
-2025-04-19 15:26:34,114 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6aa8fc89
-2025-04-19 15:26:34,117 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
-2025-04-19 15:26:34,153 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-04-19 15:26:34,531 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-19 15:26:34,547 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:26:36,114 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
-2025-04-19 15:26:36,133 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
-2025-04-19 15:26:36,234 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
-2025-04-19 15:26:36,254 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
-2025-04-19 15:26:36,283 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 7.639 seconds (process running for 8.789)
-2025-04-19 15:29:32,885 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-19 15:29:32,892 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
-2025-04-19 15:29:32,901 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	... 40 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 54 common frames omitted
+2025-04-25 12:59:38,106 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-25 12:59:38,161 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 12:59:38,162 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 12:59:39,567 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-25 12:59:39,576 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-25 12:59:39,633 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-25 12:59:39,637 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-25 12:59:39,660 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 4.255 seconds (process running for 26.698)
+2025-04-25 12:59:39,665 INFO  [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener: Condition evaluation unchanged
+2025-04-25 13:00:34,199 INFO  [SpringApplicationShutdownHook] o.a.coyote.http11.Http11NioProtocol: Stopping ProtocolHandler ["http-nio-8082"]
+2025-04-25 13:00:36,059 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 14:04:51,414 INFO  [background-preinit] o.h.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+2025-04-25 14:04:51,491 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Starting MiniShopApplication using Java 17.0.15 with PID 12332 (C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop\target\classes started by HP in C:\Users\HP\Documents\development\Java\SpringBoot\mini-shop)
+2025-04-25 14:04:51,492 DEBUG [restartedMain] c.w.v.minishop.MiniShopApplication: Running with Spring Boot v3.3.10, Spring v6.1.18
+2025-04-25 14:04:51,494 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: The following 1 profile is active: "dev"
+2025-04-25 14:04:51,573 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-25 14:04:51,573 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-25 14:04:53,717 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-25 14:04:53,787 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2025-04-25 14:04:55,121 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat initialized with port 8082 (http)
+2025-04-25 14:04:55,138 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Initializing ProtocolHandler ["http-nio-8082"]
+2025-04-25 14:04:55,141 INFO  [restartedMain] o.a.catalina.core.StandardService: Starting service [Tomcat]
+2025-04-25 14:04:55,142 INFO  [restartedMain] o.a.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 14:04:55,215 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
+2025-04-25 14:04:55,216 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3642 ms
+2025-04-25 14:04:55,770 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-25 14:04:55,862 INFO  [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-25 14:04:55,923 INFO  [restartedMain] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-04-25 14:04:56,421 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-25 14:04:56,468 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-04-25 14:04:56,676 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@31fb6650
+2025-04-25 14:04:56,680 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-04-25 14:04:56,738 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-25 14:04:58,513 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-25 14:04:58,675 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 14:05:00,922 WARN  [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 44e7cd38-3c05-4aeb-b810-5089e6950404
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-25 14:05:00,947 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-04-25 14:05:01,135 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver: Exposing 4 endpoints beneath base path '/actuator'
+2025-04-25 14:05:01,891 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-04-25 14:05:01,979 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol: Starting ProtocolHandler ["http-nio-8082"]
+2025-04-25 14:05:02,002 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer: Tomcat started on port 8082 (http) with context path '/'
+2025-04-25 14:05:02,026 INFO  [restartedMain] c.w.v.minishop.MiniShopApplication: Started MiniShopApplication in 11.594 seconds (process running for 13.089)
+2025-04-25 14:05:03,280 INFO  [RMI TCP Connection(3)-192.168.116.1] o.a.c.c.C.[Tomcat].[localhost].[/]: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-25 14:05:03,282 INFO  [RMI TCP Connection(3)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+2025-04-25 14:05:03,295 INFO  [RMI TCP Connection(3)-192.168.116.1] o.s.web.servlet.DispatcherServlet: Completed initialization in 11 ms
+2025-04-25 14:17:25,761 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-25 14:17:25,770 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-04-25 14:17:25,795 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.

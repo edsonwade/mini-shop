@@ -1,5 +1,3 @@
-package code.with.vanilson.minishop.config;
-
 /**
  * MessageProvider
  *
@@ -7,6 +5,9 @@ package code.with.vanilson.minishop.config;
  * @version 1.0
  * @since 2024-08-26
  */
+package code.with.vanilson.minishop.config;
+
+
 
 import java.io.IOException;
 import java.io.InputStream;

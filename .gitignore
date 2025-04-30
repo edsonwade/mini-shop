@@ -22,6 +22,17 @@ target/
 *.env
 /.env
 /docs
+endpoints/
+/endpoints
+*.http
+# Ignore log files
+logs/
+*.log
+
+# Ignore endpoints
+endpoints/
+/endpoints
+*.http
 
 ### NetBeans ###
 /nbproject/private/
