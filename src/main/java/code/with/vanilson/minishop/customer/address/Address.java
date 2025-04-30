@@ -93,14 +93,7 @@ public class Address {
 
     @Override
     public final boolean equals(Object o) {
-        if (!(o instanceof Address address)) {return false;}
-
-        return Objects.equals(street, address.street) &&
-                Objects.equals(streetNumber, address.streetNumber) &&
-                Objects.equals(city, address.city) && Objects.equals(country, address.country) &&
-                Objects.equals(state, address.state) && Objects.equals(zipCode, address.zipCode) &&
-                Objects.equals(apartmentNumber, address.apartmentNumber) &&
-                Objects.equals(floorNumber, address.floorNumber);
+        return o instanceof Address address && compareFields(address);
     }
 
     @Override
@@ -114,6 +107,17 @@ public class Address {
         result = 31 * result + Objects.hashCode(apartmentNumber);
         result = 31 * result + Objects.hashCode(floorNumber);
         return result;
+    }
+
+    private boolean compareFields(Address address) {
+        return Objects.equals(street, address.street)
+                && Objects.equals(streetNumber, address.streetNumber)
+                && Objects.equals(city, address.city)
+                && Objects.equals(country, address.country)
+                && Objects.equals(state, address.state)
+                && Objects.equals(zipCode, address.zipCode)
+                && Objects.equals(apartmentNumber, address.apartmentNumber)
+                && Objects.equals(floorNumber, address.floorNumber);
     }
 
     @Override
