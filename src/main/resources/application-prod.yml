@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: ${DATABASE_URL:jdbc:postgresql://localhost:5434/prod_db}
-    username: ${POSTGRES_PROD_USER:produser}
-    password: ${POSTGRES_PROD_PASSWORD:prodpassword}
+    username: ${POSTGRES_PROD_USER}
+    password: ${POSTGRES_PROD_PASSWORD}
 
     # MongoDB configuration
   data:
@@ -25,9 +25,14 @@ spring:
   #      mode: always # you won't do this in prod, I'm just doing this for demo purposes
 
   # Uncomment the following lines if you want to use Flyway for database migrations
-  # flyway:
-  #   enabled: true
-  #   locations: classpath:db/migration
+  flyway:
+    user: ${POSTGRES_PROD_USER}
+    password: ${POSTGRES_PROD_PASSWORD}
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+
 
 server:
   port: 8083

@@ -24,10 +24,10 @@ fi
 separator
 echo "Construindo a imagem Docker..."
 separator
-docker build -t "$CONTAINER_NAME:$TAG" .
+docker buildx build -t "$CONTAINER_NAME:$TAG" .
 # shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
-  echo "Erro durante 'docker build'. Verifique os logs acima."
+  echo "Erro durante 'docker buildx'. Verifique os logs acima."
   exit 1
 fi
 
@@ -35,10 +35,10 @@ fi
 separator
 echo "Subindo os containers com Docker Compose..."
 separator
-docker-compose up -d
+docker compose up -d
 # shellcheck disable=SC2181
 if [ $? -ne 0 ]; then
-  echo "Erro durante 'docker-compose up'. Verifique os logs acima."
+  echo "Erro durante 'docker compose up'. Verifique os logs acima."
   exit 1
 fi
 
