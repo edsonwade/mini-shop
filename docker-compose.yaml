@@ -1,7 +1,5 @@
-version: '3.8'
-
 services:
-
+  # Mini shop management system for production
   shop-management-system-prod:
     image: edsonwade126/mini-shop-management-system:latest
     container_name: shop-management-prod
@@ -27,7 +25,7 @@ services:
       retries: 10
       start_period: 70s
     restart: on-failure
-
+    # Mini shop management system for development
   shop-management-system-dev:
     image: edsonwade126/mini-shop-management-system:latest
     container_name: shop-management-dev
@@ -56,7 +54,7 @@ services:
       start_period: 70s
     restart: on-failure
 
-
+  # Mini shop management system for Docker
   shop-management-system-docker:
     image: edsonwade126/mini-shop-management-system:latest
     container_name: shop-management-docker
@@ -82,7 +80,7 @@ services:
       retries: 10
       start_period: 70s
     restart: on-failure
-
+    # PostgreSQL container for production
   postgres_prod:
     image: postgres:alpine
     container_name: postgres_prod
@@ -136,7 +134,7 @@ services:
       retries: 5
     restart: always
 
-
+    # PostgreSQL container for development
   postgres_dev:
     image: postgres:alpine
     container_name: postgres_dev
@@ -160,7 +158,7 @@ services:
       timeout: 5s
       retries: 5
     restart: always
-
+    # PostgreSQL container for Docker
   postgres_docker:
     image: postgres:alpine
     container_name: postgres_docker
@@ -184,30 +182,28 @@ services:
       timeout: 5s
       retries: 5
     restart: always
-  # test config
+
+  # Test Database
   postgres_test:
     image: postgres:alpine
     container_name: postgres_test
     ports:
-      - "5436:5432"  # Different port from dev and docker DBs
-    env_file:
-      - .env
+      - "5436:5432"  # Different port for test
     environment:
       POSTGRES_DB: ${POSTGRES_TEST_DB}
       POSTGRES_USER: ${POSTGRES_TEST_USERNAME}
       POSTGRES_PASSWORD: ${POSTGRES_TEST_PASSWORD}
     networks:
       - shop-management-net
-    command: |
-      postgres -c 'wal_level=replica' -c 'max_wal_senders=10' -c 'hot_standby=on'
     volumes:
       - postgres-test-data:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U admin -d shop-test-db" ]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_TEST_USERNAME} -d ${POSTGRES_TEST_DB}" ]
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: always
+    restart: unless-stopped
+
 
   # Main MongoDB container for the application
   mongodb:
@@ -228,6 +224,7 @@ services:
     networks:
       - shop-management-net
 
+    # MongoDB Express for managing MongoDB
   mongo-express:
     image: mongo-express:latest
     container_name: mongo-express
@@ -246,6 +243,7 @@ services:
     depends_on:
       - mongodb
 
+    # Redis container for caching
   redis:
     image: redis:6.2
     volumes:
@@ -255,7 +253,9 @@ services:
     networks:
       - shop-management-net
     command: [ "redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru" ]
+    restart: unless-stopped
 
+  # Prometheus for monitoring and alerting
   prometheus:
     image: prom/prometheus:v2.41.0
     container_name: prometheus
@@ -274,6 +274,7 @@ services:
       - shop-management-system-dev
       - shop-management-system-docker
 
+    # Grafana for visualizing metrics
   grafana:
     image: grafana/grafana:9.5.2
     container_name: grafana
@@ -289,6 +290,7 @@ services:
     environment:
       GF_SECURITY_ADMIN_PASSWORD: admin
 
+# Volumes for persistent data
 volumes:
   postgres_prod_data:
     driver: local
@@ -298,8 +300,6 @@ volumes:
     driver: local
   postgres_docker_data:
     driver: local
-  postgres-test-data:
-    driver: local
   prometheus_data:
     driver: local
   grafana_data:
@@ -308,7 +308,10 @@ volumes:
     driver: local
   mongo_data:
     driver: local
+  postgres-test-data:
+    driver: local
 
+    # Custom network for the application
 networks:
   shop-management-net:
     driver: bridge
