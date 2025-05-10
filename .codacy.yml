@@ -1,0 +1,13 @@
+---
+engines:
+  sqlint:
+    exclude_paths:
+      - 'src/main/resources/db/migration/**'
+  tsqllint:
+    enabled: false
+    exclude_rules:
+      - set-ansi-nulls
+      - set-quoted-identifier
+      - set-transaction-isolation-level
+      - set-nocount
+      - keyword-capitalization
