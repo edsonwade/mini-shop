@@ -1,13 +1,19 @@
 ---
 engines:
   sqlint:
-    exclude_paths:
-      - 'src/main/resources/db/migration/**'
+    enabled: false
   tsqllint:
     enabled: false
-    exclude_rules:
-      - set-ansi-nulls
-      - set-quoted-identifier
-      - set-transaction-isolation-level
-      - set-nocount
-      - keyword-capitalization
+  pmdsql:
+    exclude_paths:
+      - "src/main/resources/db/migration/**"
+exclude_patterns:
+  - "src/main/resources/db/migration/**"
+  - "**/V1__init_prod_db.sql"
+  - "**/V2__*.sql"
+---
+version: "2"
+languages:
+  sql:
+    patterns:
+      - "!src/main/resources/db/migration/**"
