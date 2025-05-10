@@ -90,18 +90,6 @@ jobs:
           echo "BUILD_DATE=$BUILD_DATE" >> $GITHUB_ENV
           echo "BUILD_USER=${{ github.actor }}" >> $GITHUB_ENV
 
-      # Add Database Migrations step
-      - name: Run Database Migrations for Production/Test
-        if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
-        env:
-          POSTGRES_PROD_USER: ${{ secrets.POSTGRES_PROD_USER }}
-          POSTGRES_PROD_PASSWORD: ${{ secrets.POSTGRES_PROD_PASSWORD }}
-          DATABASE_URL: jdbc:postgresql://postgres_prod:5432/${{ secrets.POSTGRES_PROD_DB }}
-          MONGO_ROOT_USERNAME: ${{ secrets.MONGO_ROOT_USERNAME }}
-          MONGO_ROOT_PASSWORD: ${{ secrets.MONGO_ROOT_PASSWORD }}
-          MONGO_DATABASE: ${{ secrets.MONGO_DATABASE }}
-        run: |
-          mvn flyway:migrate -Dspring.profiles.active=prod
 
       # Step 8: Docker Login
       - name: Log in to Docker Hub
