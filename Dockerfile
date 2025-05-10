@@ -19,11 +19,23 @@ RUN mvn clean package -DskipTests
 #########################################
 FROM openjdk:17
 
+# Define build arguments
+ARG BUILD_DATE
+ARG BUILD_USER
+ARG GIT_COMMIT
+
+# Add labels with proper quoting
+LABEL org.label-schema.build-date="${BUILD_DATE}" \
+      org.label-schema.vcs-ref="${GIT_COMMIT}" \
+      org.label-schema.built-by="${BUILD_USER}"
+
 # Create a non-root user
 RUN groupadd -r spring && useradd -r -g spring spring
 
 # Set environment variables
 ENV SERVER_PORT=8080
+# Set the Spring profile to prod by default
+ENV SPRING_PROFILES_ACTIVE=prod
 
 # Set working directory and ownership
 WORKDIR /app

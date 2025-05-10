@@ -399,7 +399,7 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 2025-04-25 14:04:56,738 WARN  [restartedMain] org.hibernate.orm.deprecation: HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2025-04-25 14:04:58,513 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2025-04-25 14:04:58,675 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-25 14:05:00,922 WARN  [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration: 
+2025-04-25 14:05:00,922 WARN  [restartedMain] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:
 
 Using generated security password: 44e7cd38-3c05-4aeb-b810-5089e6950404
 
