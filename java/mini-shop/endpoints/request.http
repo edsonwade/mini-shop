@@ -1,0 +1,73 @@
+### Register a new user- dev profile:
+POST http://localhost:8087/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "password123",
+  "role": [
+    "ROLE_USER"
+  ]
+}
+
+//{
+//  "username": "admin",
+//  "password": "admin123",
+//  "role": [
+//    "ROLE_ADMIN"
+//  ]
+//}
+
+### Login with the registered user- dev profile:
+POST http://localhost:8087/api/auth/sign-in
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "password123"
+}
+
+### Authorization by token, part 2. Use token to authorize dev profile
+GET http://localhost:8087/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzQ1OTQzOTU2LCJleHAiOjE3NDU5NDc1NTZ9.33qgpy6-lLVkECaktRCMuqrzJOsI0OldWT4yVKcdlenRaQ2mRgYdM5Vt2djUtGW7UBavqLT4nSuP-tWjSzExAw
+
+
+
+### Para cada um dos serviços teras que criar um usuário e admin
+
+### Register a new user - docker profile:
+POST http://localhost:8085/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123",
+  "role": [
+    "ROLE_ADMIN"
+  ]
+}
+
+### Login with the registered user - docker profile:
+POST http://localhost:8085/api/auth/sign-in
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "password123"
+}
+
+### Authorization by token, part 2. Use token to authorize docker profile
+GET http://localhost:8085/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzQ1OTQ0Njk4LCJleHAiOjE3NDU5NDgyOTh9.ruXW0IQAdJWJDbePSP7GqmxqPAV9zZkfR_1UTdtp3Ozj8u9g8ocg6l5AVmc9dAJ6-8AN_pEYTeF2P5kc3sTRTQ
+
+
+### Refresh token:
+POST http://localhost:8087/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "your-refresh-token"
+}
+
+### Logout user:
+POST http://localhost:8087/api/auth/logout

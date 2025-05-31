@@ -1,0 +1,90 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+skinparam ActivityBackgroundColor LightBlue
+skinparam ActivityBorderColor DarkBlue
+skinparam ActivityDiamondBackgroundColor LightGreen
+skinparam ActivityDiamondBorderColor DarkGreen
+
+|Customer|
+start
+repeat
+  :Browse Products;
+
+  |Product Service|
+  :Display Product Catalog;
+  :Show Product Details;
+
+  |Customer|
+  :Select Product;
+
+  |Cart Service|
+  if (Product Available?) then (yes)
+    :Add to Cart;
+    :Calculate Total;
+
+    |Customer|
+    :View Cart;
+
+    if (Continue Shopping?) then (yes)
+      |Customer|
+      :Return to Catalog;
+    else (no)
+      :Proceed to Checkout;
+
+      |Order Service|
+      :Create Order;
+      :Validate Order;
+
+      |Payment Service|
+      repeat
+        :Process Payment;
+        if (Payment Successful?) then (yes)
+
+          |Order Service|
+          :Confirm Order;
+
+          |Inventory Service|
+          :Update Stock;
+
+          |Shipping Service|
+          :Create Shipping Label;
+          :Schedule Delivery;
+
+          |Notification Service|
+          :Send Order Confirmation;
+          :Send Shipping Details;
+
+          |Customer|
+          :Receive Order Confirmation;
+          :Track Order;
+          break
+
+        else (no)
+          |Notification Service|
+          :Send Payment Failure;
+
+          |Customer|
+          :Review Payment Options;
+        endif
+      repeat while (Retry Payment?) is (yes)
+      ->no;
+    endif
+
+  else (no)
+    |Notification Service|
+    :Show Out of Stock Message;
+
+    |Customer|
+    :Choose Different Product;
+  endif
+
+repeat while (Continue Shopping?) is (yes)
+->no;
+
+|Order Service|
+:Complete Transaction;
+
+stop
+
+@enduml

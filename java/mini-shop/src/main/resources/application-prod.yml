@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5434/prod_db}
+    username: ${POSTGRES_PROD_USER}
+    password: ${POSTGRES_PROD_PASSWORD}
+
+    # MongoDB configuration
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@localhost:27017/${MONGO_DATABASE}?authSource=admin
+
+
+  jpa:
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  #  sql:
+  #    init:
+  #      mode: always # you won't do this in prod, I'm just doing this for demo purposes
+
+  # Uncomment the following lines if you want to use Flyway for database migrations
+  flyway:
+    user: ${POSTGRES_PROD_USER}
+    password: ${POSTGRES_PROD_PASSWORD}
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+
+
+server:
+  port: 8083
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus, info
+  endpoint:
+    health:
+      show-details: always
+
+

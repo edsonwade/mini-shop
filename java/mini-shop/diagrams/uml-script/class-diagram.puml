@@ -1,0 +1,219 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+' Style and Theme
+skinparam classAttributeIconSize 0
+skinparam backgroundColor white
+skinparam roundcorner 5
+
+' Client and Account
+class Client {
+  -id: ID
+  -name: String
+  -address: String
+  -phone: String
+  -email: String
+  -createdAt: DateTime
+  -updatedAt: DateTime
+  +createClient(clientData: ClientInput): Client
+  +updateClient(clientId: ID, clientData: ClientInput): Client
+  +deleteClient(clientId: ID): Boolean
+  +getClient(clientId: ID): Client
+  +listClients(): List<Client>
+}
+
+class Account {
+  -id: ID
+  -clientId: ID
+  -accountNumber: String
+  -balance: Decimal
+  -status: AccountStatus
+  -createdAt: DateTime
+  +createAccount(clientId: ID, accountData: AccountInput): Account
+  +updateAccount(accountId: ID, accountData: AccountInput): Account
+  +getAccount(accountId: ID): Account
+  +deposit(accountId: ID, amount: Decimal): Decimal
+  +withdraw(accountId: ID, amount: Decimal): Decimal
+  +getTransactionHistory(accountId: ID): List<Transaction>
+}
+
+' Product and Category
+class Product {
+  -id: ID
+  -categoryId: ID
+  -name: String
+  -description: String
+  -price: Decimal
+  -stockQuantity: Integer
+  -createdAt: DateTime
+  +createProduct(productData: ProductInput): Product
+  +updateProduct(productId: ID, productData: ProductInput): Product
+  +deleteProduct(productId: ID): Boolean
+  +getProduct(productId: ID): Product
+  +listProducts(): List<Product>
+  +checkAvailability(productId: ID): Boolean
+}
+
+class Category {
+  -id: ID
+  -name: String
+  -description: String
+  -createdAt: DateTime
+  +createCategory(categoryData: CategoryInput): Category
+  +updateCategory(categoryId: ID, categoryData: CategoryInput): Category
+  +deleteCategory(categoryId: ID): Boolean
+  +getCategory(categoryId: ID): Category
+  +listCategories(): List<Category>
+}
+
+' Cart and CartItem
+class Cart {
+  -id: ID
+  -clientId: ID
+  -status: CartStatus
+  -createdAt: DateTime
+  +createCart(clientId: ID): Cart
+  +addItem(cartId: ID, productId: ID, quantity: Integer): Cart
+  +updateItem(cartId: ID, productId: ID, quantity: Integer): Cart
+  +removeItem(cartId: ID, productId: ID): Cart
+  +clearCart(cartId: ID): Cart
+  +viewCart(cartId: ID): List<CartItem>
+}
+
+class CartItem {
+  -id: ID
+  -cartId: ID
+  -productId: ID
+  -quantity: Integer
+  -price: Decimal
+  -createdAt: DateTime
+}
+
+' Order and OrderItem
+class Order {
+  -id: ID
+  -clientId: ID
+  -status: OrderStatus
+  -totalAmount: Decimal
+  -createdAt: DateTime
+  +createOrder(clientId: ID, cartId: ID, orderDetails: OrderInput): Order
+  +cancelOrder(orderId: ID): Order
+  +getOrder(orderId: ID): Order
+  +listOrders(clientId: ID): List<Order>
+  +updateOrderStatus(orderId: ID, status: OrderStatus): Order
+}
+
+class OrderItem {
+  -id: ID
+  -orderId: ID
+  -productId: ID
+  -quantity: Integer
+  -price: Decimal
+  -createdAt: DateTime
+  +getOrderItems(orderId: ID): List<OrderItem>
+}
+
+' Payment
+class Payment {
+  -id: ID
+  -orderId: ID
+  -amount: Decimal
+  -method: PaymentMethod
+  -status: PaymentStatus
+  -createdAt: DateTime
+  +processPayment(orderId: ID, paymentData: PaymentInput): Payment
+  +getPayment(paymentId: ID): Payment
+  +refundPayment(paymentId: ID): RefundStatus
+}
+
+' Notification
+class Notification {
+  -id: ID
+  -recipientId: ID
+  -message: String
+  -type: NotificationType
+  -status: NotificationStatus
+  -createdAt: DateTime
+  +sendNotification(recipientId: ID, message: String, type: NotificationType): Notification
+  +getNotifications(recipientId: ID): List<Notification>
+}
+
+' Shipping
+class Shipping {
+  -id: ID
+  -orderId: ID
+  -address: String
+  -method: ShippingMethod
+  -cost: Decimal
+  -status: ShippingStatus
+  -estimatedDelivery: DateTime
+  -createdAt: DateTime
+  +createShipping(orderId: ID, shippingData: ShippingInput): Shipping
+  +updateShipping(shippingId: ID, shippingData: ShippingInput): Shipping
+  +getShipping(shippingId: ID): Shipping
+}
+
+' Discount
+class Discount {
+  -id: ID
+  -code: String
+  -type: DiscountType
+  -value: Decimal
+  -startDate: DateTime
+  -endDate: DateTime
+  -usageLimit: Integer
+  -usageCount: Integer
+  -status: DiscountStatus
+  -createdAt: DateTime
+  +createDiscount(discountData: DiscountInput): Discount
+  +updateDiscount(discountId: ID, discountData: DiscountInput): Discount
+  +deleteDiscount(discountId: ID): Boolean
+  +getDiscount(discountId: ID): Discount
+  +listDiscounts(): List<Discount>
+}
+
+' Relationships
+Client "1" -- "1" Account
+Client "1" -- "*" Order
+Client "1" -- "1" Cart
+Product "1" -- "*" OrderItem
+Product "*" -- "1" Category
+Cart "1" -- "*" CartItem
+CartItem "*" -- "1" Product
+Order "1" -- "*" OrderItem
+Order "1" -- "1" Payment
+Order "1" -- "1" Shipping
+Order "*" -- "*" Discount
+Notification "*" -- "1" Client
+
+' Enums
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  FAILED
+  REFUNDED
+}
+
+enum ShippingStatus {
+  PENDING
+  IN_TRANSIT
+  DELIVERED
+}
+
+enum NotificationType {
+  ORDER_STATUS
+  PAYMENT
+  SHIPPING
+  PROMOTION
+}
+
+
+@enduml
